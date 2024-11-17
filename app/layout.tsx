@@ -1,7 +1,16 @@
 import { Inter } from 'next/font/google';
 import React from 'react';
+import './globals.css';
+import localFont from 'next/font/local';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const pretendard = localFont({
+  src: './fonts/PretendardVariable.woff2',
+  display: 'swap',
+  variable: '--font-pretendard',
+  weight: '45 920',
+});
 
 export const metadata = {
   title: 'Poké MuMu',
@@ -18,8 +27,8 @@ export default function RootLayout({
   modal,
 }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="ko">
+      <body className={`${inter.className} ${pretendard.variable} antialiased`}>
         <main className="sm:px-8 md:px-10 py-6 min-h-svh xl:px-16">
           {children}
         </main>
