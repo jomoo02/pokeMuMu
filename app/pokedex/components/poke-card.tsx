@@ -2,11 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import PokeTypeCard from '@/app/components/poke-type-card';
-import type { CardPoke } from '@/app/models/poke.type';
+import type { Poke } from '@/app/models/poke.type';
 import usePokeCard from '../hooks/usePokeCard';
+import PokeCardStats from './poke-card-stats';
 
 interface PokeCardProps {
-  poke: CardPoke;
+  poke: Poke;
 }
 
 export default function PokeCard({ poke }: PokeCardProps) {
@@ -47,7 +48,8 @@ export default function PokeCard({ poke }: PokeCardProps) {
         <div className="grid grow items-center px-2 xl:px-3">
           <div>
             <Link
-              href={`/pokedex/${pokeKey}`}
+              // href={`/pokedex/${pokeKey}`}
+              href="/"
               className="font-bold text-blue-800 leading-4 text-[15px] xl:text-base"
               onClick={handlePokeCardClick}
             >
@@ -68,9 +70,9 @@ export default function PokeCard({ poke }: PokeCardProps) {
           </div>
         ))}
       </div>
-      {/* <div className="text-sm hidden md:flex items-center">
+      <div className="text-sm hidden md:flex items-center">
         <PokeCardStats stats={stats} />
-      </div> */}
+      </div>
     </div>
   );
 }

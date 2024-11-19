@@ -2,12 +2,13 @@
 
 import React, { useMemo } from 'react';
 import { Virtuoso } from 'react-virtuoso';
-import type { CardPoke } from '@/app/models/poke.type';
+import type { Poke } from '@/app/models/poke.type';
 import PokeCard from './poke-card';
 import usePokeCardList from '../hooks/usePokeCardList';
+import PokeCardListHeader from './poke-card-list-header';
 
 interface PokeCardListProps {
-  pokeList: CardPoke[];
+  pokeList: Poke[];
 }
 
 function Ske() {
@@ -21,7 +22,7 @@ export default function PokeCardList({ pokeList }: PokeCardListProps) {
 
   const { isLoading } = usePokeCardList();
 
-  const itemContent = (index: number, poke: CardPoke) => (
+  const itemContent = (index: number, poke: Poke) => (
     <div className="border-b">
       {isLoading ? <Ske /> : <PokeCard poke={poke} />}
     </div>
@@ -29,7 +30,7 @@ export default function PokeCardList({ pokeList }: PokeCardListProps) {
 
   return (
     <div className="sm:flex sm:flex-col sm:items-center">
-      {/* <ListHeader /> */}
+      <PokeCardListHeader />
       <Virtuoso
         useWindowScroll
         data={momoedPokes}
