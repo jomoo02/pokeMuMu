@@ -16,7 +16,7 @@ export default function PokeCard({ poke }: PokeCardProps) {
     name,
     types,
     form,
-    pokeKey,
+    // pokeKey,
     no,
     stats,
     handlePokeCardClick,
