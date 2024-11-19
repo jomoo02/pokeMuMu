@@ -16,7 +16,7 @@ export default function PokeCard({ poke }: PokeCardProps) {
     name,
     types,
     form,
-    // pokeKey,
+    pokeKey,
     no,
     stats,
     handlePokeCardClick,
@@ -48,8 +48,7 @@ export default function PokeCard({ poke }: PokeCardProps) {
         <div className="grid grow items-center px-2 xl:px-3">
           <div>
             <Link
-              // href={`/pokedex/${pokeKey}`}
-              href="/"
+              href={`/pokedex/${pokeKey}`}
               className="font-bold text-blue-800 leading-4 text-[15px] xl:text-base"
               onClick={handlePokeCardClick}
             >
