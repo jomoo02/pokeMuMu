@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Virtuoso } from 'react-virtuoso';
 import type { Poke } from '@/app/models/poke.type';
 import PokeCard from './poke-card';
@@ -17,27 +17,35 @@ function Ske() {
   );
 }
 
-export default function PokeCardList({ pokeList }: PokeCardListProps) {
-  const momoedPokes = useMemo(() => pokeList, []);
+function PokeCardList({ pokeList }: PokeCardListProps) {
+  // const momoedPokes = useMemo(() => pokeList, []);
 
-  const { isLoading } = usePokeCardList();
+  // const { isLoading } = usePokeCardList();
 
-  const itemContent = (index: number, poke: Poke) => (
-    <div className="border-b">
-      {isLoading ? <Ske /> : <PokeCard poke={poke} />}
-    </div>
-  );
+  // const itemContent = (index: number, poke: Poke) => (
+  //   <div className="border-b">
+  //     {isLoading ? <Ske /> : <PokeCard poke={poke} />}
+  //   </div>
+  // );
 
   return (
     <div className="sm:flex sm:flex-col sm:items-center">
       <PokeCardListHeader />
-      <Virtuoso
+      <div className="w-pokedex">
+        {pokeList.map((poke) => <PokeCard key={`${poke.name}-${poke.form}-${poke.id}-${poke.order}`} poke={poke} />)}
+      </div>
+
+      {/* <Virtuoso
         useWindowScroll
         data={momoedPokes}
         totalCount={momoedPokes.length}
         itemContent={itemContent}
         className="w-pokedex"
-      />
+      /> */}
     </div>
   );
 }
+
+const MemoedPokeCardList = memo(PokeCardList);
+
+export default MemoedPokeCardList;

@@ -1,4 +1,4 @@
-const noEggs = 'no-eggs';
+const NO_EGGS = 'no-eggs';
 
 export type EggGroup =
   'indeterminate'
@@ -38,6 +38,6 @@ const EGG_GROUPS: EggGroups = {
 };
 
 export {
-  noEggs,
+  NO_EGGS,
   EGG_GROUPS,
 };

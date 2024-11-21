@@ -1,11 +1,11 @@
 import type { PokeType } from '../data/poke-type';
-import type { LocalPokedex } from '../data/local-pokedex';
+import type { Pokedex } from '../data/pokedex';
 import type { EggGroup } from '../data/egg-group';
 import type { Stat } from '../data/stat';
 import type { GrowthRate } from '../data/growth-rate';
 
 export type PokedexNumber = {
-  pokedex: LocalPokedex;
+  pokedex: Pokedex;
   entryNumber: number;
 };
 

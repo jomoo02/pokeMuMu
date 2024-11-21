@@ -42,10 +42,11 @@ export default function PokeCard({ poke }: PokeCardProps) {
               style={{
                 objectFit: 'contain',
               }}
+              priority={false}
             />
           </div>
         </div>
-        <div className="grid grow items-center px-2 xl:px-3">
+        <div className="grid grow items-center px-3 xl:px-3.5">
           <div>
             <Link
               href={`/pokedex/${pokeKey}`}

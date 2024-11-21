@@ -1,3 +1,4 @@
+const NATIONAL = 'national';
 const kanto = 'kanto';
 const originalJohto = 'original-johto';
 const hoenn = 'hoenn';
@@ -22,7 +23,8 @@ const paldea = 'paldea';
 const kitakami = 'kitakami';
 const bluberry = 'blueberry';
 
-const LOCAL_POKEDEX_INDEX = {
+const POKEDEX_INDEX = {
+  [NATIONAL]: 1,
   [kanto]: 2,
   [originalJohto]: 3,
   [hoenn]: 4,
@@ -48,9 +50,10 @@ const LOCAL_POKEDEX_INDEX = {
   [bluberry]: 24,
 };
 
-export type LocalPokedex = keyof typeof LOCAL_POKEDEX_INDEX;
+export type Pokedex = keyof typeof POKEDEX_INDEX;
 
-const LOCAL_POKEDEX_LIST: Record<LocalPokedex, string> = {
+const POKEDEX_LIST: Record<Pokedex, string> = {
+  [NATIONAL]: '전국도감',
   [kanto]: '레드/블루/피카츄',
   [originalJohto]: '골드/실버/크리스탈',
   [hoenn]: '루비/사파이어/에메랄드',
@@ -77,6 +80,7 @@ const LOCAL_POKEDEX_LIST: Record<LocalPokedex, string> = {
 };
 
 export {
-  LOCAL_POKEDEX_INDEX,
-  LOCAL_POKEDEX_LIST,
+  NATIONAL,
+  POKEDEX_INDEX,
+  POKEDEX_LIST,
 };
