@@ -1,5 +1,5 @@
 import React from 'react';
-import Information from './_information';
+import PokeInformationList from './_information';
 import { getPokeList } from './utils/get-poke';
 
 interface PageProps {
@@ -17,7 +17,7 @@ export default async function Page({
 
   return (
     <div>
-      {pokeList.map((poke) => <Information key={`${poke.name}-${poke.form}`} poke={poke} />)}
+      <PokeInformationList pokeList={pokeList} />
     </div>
   );
 }

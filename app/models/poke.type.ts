@@ -27,10 +27,7 @@ export type Breeding = {
 };
 
 export type Detail = {
-  genera: {
-    en: string;
-    ko: string;
-  }; // 수정 예정
+  genera: string;
   height: number;
   weight: number;
   captureRate: number;

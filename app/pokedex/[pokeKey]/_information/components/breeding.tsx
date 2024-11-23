@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import type { Breeding } from '@/app/models/poke.type';
 import InfoItem from './info-item';
+import InfoTitle from './info-title';
 import {
   setEggGroups,
   getGenderInfo,
@@ -43,14 +44,16 @@ export default function InformationBreeding({
 
   return (
     <div>
-      <h3>유전 정보</h3>
+      <InfoTitle title="유전 정보" />
       <InfoItem subject="알 그룹">
-        <div className="flex gap-x-1">
+        <div>
           {eggGroups.map((eggGroup, index) => (
-            <span key={eggGroup}>
-              {eggGroup}
-              {index > 0 && ','}
-            </span>
+            <Fragment key={eggGroup}>
+              {index > 0 && (
+                <span className="mr-1">,</span>
+              )}
+              <span>{eggGroup}</span>
+            </Fragment>
           ))}
         </div>
       </InfoItem>

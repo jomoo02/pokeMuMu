@@ -3,6 +3,7 @@ import PokeTypeCard from '@/app/components/poke-type-card';
 import type { Poke } from '@/app/models/poke.type';
 import { classifyPokedexNumber } from '../utils/baisc';
 import InfoItem from './info-item';
+import InfoTitle from './info-title';
 
 interface BasicProps {
   poke: Poke;
@@ -25,7 +26,7 @@ export default function InformationBasic({
 
   return (
     <div>
-      <h3>기본 정보</h3>
+      <InfoTitle title="기본 정보" />
       <InfoItem
         subject="전국도감"
         content={nationalNo}
