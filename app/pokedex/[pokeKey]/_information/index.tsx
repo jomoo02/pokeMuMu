@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import type { Poke } from '@/app/models/poke.type';
 import Information from './components/information';
 import PokeStats from '../_stats';
+import PokeDefenseCompatibility from '../_defense-compatibility';
 
 interface PokeInformationListProps {
   pokeList: Poke[];
@@ -31,6 +32,7 @@ export default function PokeInformationList({
       </div>
       <Information poke={targetPoke} />
       <PokeStats stats={targetPoke.stats} type={targetPoke.types[0]} />
+      <PokeDefenseCompatibility types={targetPoke.types} />
     </div>
   );
 }
