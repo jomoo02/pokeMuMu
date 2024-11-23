@@ -1,5 +1,5 @@
 import React from 'react';
-import PokeTypeCard from '@/app/components/poke-type-card';
+import PokeTypeBadge from '@/app/components/poke-type-badge';
 import type { Poke } from '@/app/models/poke.type';
 import { classifyPokedexNumber } from '../utils/baisc';
 import InfoItem from './info-item';
@@ -41,7 +41,7 @@ export default function InformationBasic({
       />
       <InfoItem subject="타입">
         <div className="flex gap-x-2">
-          {types.map((type) => <PokeTypeCard key={type} type={type} />)}
+          {types.map((type) => <PokeTypeBadge key={type} type={type} />)}
         </div>
       </InfoItem>
       <InfoItem subject="지역도감">

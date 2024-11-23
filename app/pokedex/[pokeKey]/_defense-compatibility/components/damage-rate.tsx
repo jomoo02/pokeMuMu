@@ -1,5 +1,5 @@
 import React from 'react';
-import PokeTypeCard from '@/app/components/poke-type-card';
+import PokeTypeBadge from '@/app/components/poke-type-badge';
 import type { PokeType } from '@/app/data/poke-type';
 
 interface DamageRateProps {
@@ -35,7 +35,7 @@ export default function DamageRate({
           className={`grid grid-cols-3 sm:grid-cols-6 ${gridColsClassName} gap-x-2.5 sm:gap-x-3 lg:gap-x-2.5 gap-y-2 sm:gap-y-2 lg:gap-y-2.5 justify-items-center`}
         >
           {types.map((type) => (
-            <PokeTypeCard type={type} key={type} />
+            <PokeTypeBadge type={type} key={type} />
           ))}
         </div>
       </div>

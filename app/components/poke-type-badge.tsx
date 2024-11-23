@@ -4,15 +4,15 @@ import {
   type PokeType,
 } from '@/app/data/poke-type';
 
-interface PokeTypeCardProps {
+interface PokeTypeBadgeProps {
   type: PokeType;
   width?: string;
 }
 
-export default function PokeTypeCard({
+export default function PokeTypeBadge({
   type,
   width = 'w-[60px] xs:w-[63px]',
-}: PokeTypeCardProps) {
+}: PokeTypeBadgeProps) {
   const typeText = POKE_TYPE_LIST[type];
 
   return (

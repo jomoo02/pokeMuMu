@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import PokeTypeCard from '@/app/components/poke-type-card';
+import PokeTypeBadge from '@/app/components/poke-type-badge';
 import type { Poke } from '@/app/models/poke.type';
 import usePokeCard from '../hooks/usePokeCard';
 import PokeCardStats from './poke-card-stats';
@@ -66,7 +66,7 @@ export default function PokeCard({ poke }: PokeCardProps) {
       <div className="w-card-type flex flex-col gap-y-1 items-center justify-center">
         {types.map((type) => (
           <div key={type}>
-            <PokeTypeCard type={type} />
+            <PokeTypeBadge type={type} />
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import PokeTypeCard from '@/app/components/poke-type-card';
+import PokeTypeBadge from '@/app/components/poke-type-badge';
 import type { PokeType } from '@/app/data/poke-type';
 import { formatDefenseCompatibility } from '../utils/defense-compatibility';
 import DamageRate from './damage-rate';
@@ -19,7 +19,7 @@ export default function DefenseCompatibility({
     <div className={`border-2 border-t-0 ${mainType}-border rounded-b-sm`}>
       <div className={`flex py-1 md:py-1.5 justify-center items-center gap-x-2.5 border-b-2 ${mainType}-border`}>
         <div className="flex gap-x-2">
-          {pokeTypes.map((type) => <PokeTypeCard key={type} type={type} />)}
+          {pokeTypes.map((type) => <PokeTypeBadge key={type} type={type} />)}
         </div>
       </div>
       <div className="flex justify-center flex-col md:flex-row">
