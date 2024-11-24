@@ -39,6 +39,8 @@ export type PokeType =
   | 'steel'
   | 'fairy';
 
+const DEFAULT_POKE_TYPE = 'normal';
+
 const POKE_TYPE_LIST: Record<PokeType, string> = {
   normal: '노말',
   fire: '불꽃',
@@ -62,4 +64,5 @@ const POKE_TYPE_LIST: Record<PokeType, string> = {
 
 export {
   POKE_TYPE_LIST,
+  DEFAULT_POKE_TYPE,
 };

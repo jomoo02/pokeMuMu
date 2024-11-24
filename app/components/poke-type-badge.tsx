@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   POKE_TYPE_LIST,
+  DEFAULT_POKE_TYPE,
   type PokeType,
 } from '@/app/data/poke-type';
 
@@ -10,7 +11,7 @@ interface PokeTypeBadgeProps {
 }
 
 export default function PokeTypeBadge({
-  type,
+  type = DEFAULT_POKE_TYPE,
   width = 'w-[60px] xs:w-[63px]',
 }: PokeTypeBadgeProps) {
   const typeText = POKE_TYPE_LIST[type];
