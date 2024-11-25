@@ -14,15 +14,15 @@ export default function DamageClassBadge({
 }: DamageClassBadgeProps) {
   const damageClassBadgeMap = {
     physical: {
-      src: '/damage/physical.png',
+      src: '/damageclass/physical.png',
       bgColor: 'bg-orange-400/90',
     },
     special: {
-      src: '/damage/special.png',
+      src: '/damageclass/special.png',
       bgColor: 'bg-blue-400/90',
     },
     status: {
-      src: '/damage/status.png',
+      src: '/damageclass/status.png',
       bgColor: 'bg-gray-400/90',
     },
   };

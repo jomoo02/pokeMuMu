@@ -4,6 +4,7 @@ import {
   getPokeList,
   getPokeDetail,
 } from './utils/get-poke';
+import PokeMoves from './_moves';
 
 interface PageProps {
   params: {
@@ -15,8 +16,6 @@ export default async function Page({
   params,
 }: PageProps) {
   const { pokeKey } = params;
-
-  // const pokeList = await getPokeList(pokeKey);
 
   const [
     pokeList,
@@ -30,6 +29,9 @@ export default async function Page({
     <div>
       <PokeInformationList pokeList={pokeList} />
       <div>{pokeDetail?.speciesName.ko}</div>
+      {pokeDetail && (
+        <PokeMoves moves={pokeDetail?.moves} />
+      )}
     </div>
   );
 }
