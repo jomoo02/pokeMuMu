@@ -9,6 +9,7 @@ import {
 import TableRow from './table-row';
 import useMethodMoveTable from '../../hooks/useMethodMoveTable';
 import { MoveMethod } from '../../config/move-method';
+import Title from './title';
 
 interface MethodMoveTableProps {
   targetMoveList: Move[];
@@ -28,7 +29,8 @@ export default function MethodMoveTable({
 
   return (
     <div>
-      <table className="border-separate border border-slate-400">
+      <Title moveMethod={moveMethod} />
+      <table className="border border-slate-300 ">
         <MethodMoveTableHead
           headItemList={tableHeadItemList}
           targetCellKey={targetCellKey}

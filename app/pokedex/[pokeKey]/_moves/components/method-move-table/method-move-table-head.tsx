@@ -30,7 +30,7 @@ export default function MethodMoveTableHead({
         }) => (
           <th
             key={id}
-            className={`${className} h-[2.4rem] border border-slate-300`}
+            className={`${className} h-[2.4rem] border p-0 border-slate-300`}
           >
             <button
               type="button"

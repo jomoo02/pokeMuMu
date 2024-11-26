@@ -37,7 +37,7 @@ const defaultHeadItemList: TableHeadItem[] = [
 
 const levelHeadItem: TableHeadItem = {
   content: 'Lv.',
-  className: 'w-[3.25rem]',
+  className: 'w-[3.35rem]',
   id: 'level',
 };
 

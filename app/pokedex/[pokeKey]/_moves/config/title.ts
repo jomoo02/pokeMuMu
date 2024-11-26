@@ -1,15 +1,7 @@
-export type MoveMethod =
-  'level'
-  | 'pre'
-  | 'egg'
-  | 'tutor'
-  | 'reminder'
-  | 'hm'
-  | 'tm'
-  | 'tr';
+import type { MoveMethod } from './move-method';
 
 const METHOD_MOVE_TITLE_LIST: Record<MoveMethod, string> = {
-  level: '레벌 업으로 익히는 기술',
+  'level-up': '레벌 업으로 익히는 기술',
   egg: '교배를 통해 유전 받을 수 있는 기술',
   tutor: 'NPC로부터 배울 수 있는 기술',
   reminder: '떠올리기로 익히는 기술',
