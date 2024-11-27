@@ -41,9 +41,9 @@ export default function TableRow({
   move,
   moveMethod,
 }: TableRowProps) {
-  const name = move.move.name.ko;
-  const damageClass = move.move.damage_class;
-  const { power, type, accuracy } = move.move;
+  const name = move.name.ko;
+  const damageClass = move.damage_class;
+  const { power, type, accuracy } = move;
 
   return (
     <tr className="text-sm font-medium h-9">

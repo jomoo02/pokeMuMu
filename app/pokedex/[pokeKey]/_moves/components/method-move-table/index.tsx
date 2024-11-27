@@ -39,7 +39,7 @@ export default function MethodMoveTable({
         />
         <tbody>
           {targetMoveList.map((move) => (
-            <TableRow key={`${move.level}-${move.move.name.ko}`} move={move} moveMethod={moveMethod} />
+            <TableRow key={`${move.level}-${move.name.ko}`} move={move} moveMethod={moveMethod} />
           ))}
         </tbody>
       </table>
