@@ -32,21 +32,18 @@ export type Move = {
   preIds?: number[];
 };
 
-export type MachineMove = Omit<Move, 'machine'> & {
-  machine: {
-    id: number;
-    type: MachineType;
-    number: number;
-  };
-};
+export type MoveMethod =
+  'level-up'
+  | 'pre'
+  | 'egg'
+  | 'tutor'
+  | 'reminder'
+  | 'tm'
+  | 'hm'
+  | 'tr';
 
 export type VersionMove = {
-  'level-up': Move[] | [];
-  machine: Move[] | [];
-  tutor: Move[] | [];
-  egg: Move[] | [];
-  pre: Move[] | [];
-  reminder: Move[] | [];
+  [K in MoveMethod]: Move[] | [];
 };
 
 export type GenMoveList = {

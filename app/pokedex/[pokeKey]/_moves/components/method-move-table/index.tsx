@@ -1,14 +1,13 @@
 'use client';
 
 import React from 'react';
-import type { Move } from '@/app/models/detail.type';
+import type { Move, MoveMethod } from '@/app/models/detail.type';
 import MethodMoveTableHead from './method-move-table-head';
 import {
   getTableHeadItemList,
 } from '../../utils/table-head';
 import TableRow from './table-row';
 import useMethodMoveTable from '../../hooks/useMethodMoveTable';
-import { MoveMethod } from '../../config/move-method';
 import Title from './title';
 
 interface MethodMoveTableProps {

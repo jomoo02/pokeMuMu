@@ -1,4 +1,4 @@
-export type MoveMethod =
+export type Method =
   'level-up'
   | 'pre'
   | 'egg'

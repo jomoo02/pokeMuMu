@@ -1,7 +1,6 @@
-import type { MachineType } from '@/app/models/detail.type';
-import {
-  type MoveMethod,
-} from '../config/move-method';
+import type {
+  MachineType,
+} from '@/app/models/detail.type';
 import {
   defaultHeadItemList,
   levelHeadItem,
@@ -9,8 +8,9 @@ import {
   getMachineHeadItem,
   type TableHeadItem,
 } from '../config/table-head';
+import type { Method } from '../config/move-method';
 
-export function getTableHeadItemList(method: MoveMethod): TableHeadItem[] {
+export function getTableHeadItemList(method: Method): TableHeadItem[] {
   if (method === 'level-up') {
     return [
       { ...levelHeadItem },
