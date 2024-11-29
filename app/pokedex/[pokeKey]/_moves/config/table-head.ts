@@ -42,14 +42,14 @@ const levelHeadItem: TableHeadItem = {
 };
 
 const prePokeHeadItem: TableHeadItem = {
-  content: '',
+  content: 'Poke',
   className: 'w-[4.8rem]',
   id: 'prePoke',
 };
 
 const getMachineHeadItem = (machineType: MachineType): TableHeadItem => ({
   content: machineType.toUpperCase(),
-  className: 'w-14',
+  className: 'w-[3.35rem]',
   id: 'machine',
 });
 

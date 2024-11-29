@@ -3,9 +3,9 @@ import {
   VERSION_LIST,
   type Version,
 } from '@/app/data/version';
-import type { GenMoveList } from '@/app/models/detail.type';
+import type { GenMoves } from '@/app/models/detail.type';
 
-const setInitialTargetGenVersion = (genMoveList: GenMoveList) => {
+const setInitialTargetGenVersion = (genMoveList: GenMoves) => {
   const targetGenVersion = genMoveList.find(({ versionMoves }) => (
     Object.values(versionMoves).some((moveList) => moveList.length > 0)
   ));
@@ -17,8 +17,11 @@ const setInitialTargetGenVersion = (genMoveList: GenMoveList) => {
   return targetGenVersion.version;
 };
 
-export default function useGenMoveList(genMoveList: GenMoveList) {
-  const genVersionList = genMoveList.map(({ version }) => VERSION_LIST[version]);
+export default function useGenMoveList(genMoveList: GenMoves) {
+  const genVersionList = genMoveList.map(({ version }) => ({
+    version,
+    localeVersion: VERSION_LIST[version],
+  }));
 
   const initialTargetGenVersion = setInitialTargetGenVersion(genMoveList);
 

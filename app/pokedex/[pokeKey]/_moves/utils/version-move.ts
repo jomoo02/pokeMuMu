@@ -1,8 +1,8 @@
 import type {
   VersionMove,
-  MachineMove,
   MachineType,
   MoveMethod,
+  MachineMove,
   Move,
 } from '@/app/models/detail.type';
 
@@ -32,9 +32,22 @@ function categorizeVersionMove(versionMove: VersionMove) {
     moveList,
   });
 
-  return Object
+  const categorizedMoveList = Object
     .entries(versionMove)
     .map(([method, moveList]) => setVersionMoveItem(method as MoveMethod, moveList));
+
+  const filterMachineCondition = (method: MoveMethod) => method === 'hm' || method === 'tm' || method === 'tr';
+
+  const machineMoveList = categorizedMoveList
+    .filter(({ method }) => filterMachineCondition(method));
+
+  const restMoveList = categorizedMoveList
+    .filter(({ method }) => !filterMachineCondition(method));
+
+  return {
+    machineMoveList,
+    methodMoveLst: restMoveList,
+  };
 }
 
 export {

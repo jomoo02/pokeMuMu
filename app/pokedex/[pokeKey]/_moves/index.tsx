@@ -1,24 +1,24 @@
 import React from 'react';
-import './styles/method-move-table.css';
 import { Moves } from '@/app/models/detail.type';
-import MethodMoveTable from './components/method-move-table';
+import { PokeType } from '@/app/data/poke-type';
+import MoveList from './components/move-list';
 
 interface PokeMovesProps {
   moves: Moves;
+  type: PokeType;
 }
 
 export default function PokeMoves({
   moves,
+  type,
 }: PokeMovesProps) {
   if (!moves) {
     return null;
   }
 
-  const targetMove = moves.at(-1)?.genMoves[0].versionMoves['level-up'];
-
   return (
     <div>
-      <MethodMoveTable targetMoveList={targetMove} moveMethod="level-up" />
+      <MoveList moves={moves} type={type} />
     </div>
   );
 }

@@ -18,18 +18,27 @@ export type Name = {
 export type MachineType = 'tm' | 'hm' | 'tr';
 
 export type Move = {
+  id: number;
   accuracy: number;
   power: number | null;
   damage_class: DamageClass;
   type: PokeType;
   name: Name;
-  level?: number;
+  level: number;
   machine?: {
     id: number;
     type: MachineType;
     number: number;
   };
   preIds?: number[];
+};
+
+export type MachineMove = Omit<Move, 'machine'> & {
+  machine: {
+    id: number;
+    type: MachineType;
+    number: number;
+  };
 };
 
 export type MoveMethod =
@@ -46,14 +55,14 @@ export type VersionMove = {
   [K in MoveMethod]: Move[] | [];
 };
 
-export type GenMoveList = {
+export type GenMoves = {
   version: Version;
   versionMoves: VersionMove;
 }[];
 
 export type Moves = {
   gen: number;
-  genMoves: GenMoveList;
+  genMoves: GenMoves;
 }[];
 
 export type Detail = {

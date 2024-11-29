@@ -19,11 +19,8 @@ export default function CellMachine({
     : `0${machineNumber}`;
 
   return (
-    <div
-      key="machine"
-      className="cell-machine text-sm px-2 font-medium flex items-center"
-    >
+    <>
       {formattedMachineNumber}
-    </div>
+    </>
   );
 }

@@ -1,8 +1,7 @@
 import React from 'react';
-import type { Move } from '@/app/models/detail.type';
+import type { Move, MoveMethod } from '@/app/models/detail.type';
 import DamageClassBadge from '@/app/components/damage-class-badge';
 import PokeTypeBadge from '@/app/components/poke-type-badge';
-import type { MoveMethod } from '../../config/move-method';
 import CellPrePoke from './cell-pre-poke';
 import CellMachine from './cell-machine';
 
@@ -48,7 +47,7 @@ export default function TableRow({
   return (
     <tr className="text-sm font-medium h-9">
       <FirstCell moveMethod={moveMethod} move={move} />
-      <td className="px-1.5 text-base font-semibold text-slate-700 border border-slate-300">
+      <td className="px-1.5 text-base font-semibold text-slate-700 border border-slate-300 text-nowrap">
         {name}
       </td>
       <td align="center" className="border border-slate-300">

@@ -22,7 +22,7 @@ export default function MethodMoveTableHead({
 
   return (
     <thead>
-      <tr className="text-sm md:text-base font-medium">
+      <tr className="text-sm md:text-base font-medium text-nowrap">
         {headItemList.map(({
           className,
           id,

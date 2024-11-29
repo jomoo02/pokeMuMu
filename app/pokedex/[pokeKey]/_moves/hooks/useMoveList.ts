@@ -7,7 +7,7 @@ import type { Moves } from '@/app/models/detail.type';
 export default function useMoveList(moves: Moves) {
   const genList = moves.map(({ gen }) => gen);
 
-  const initialTargetGen = genList.at(-1);
+  const initialTargetGen = genList.at(-1) || genList[0];
 
   const [targetGen, setTargetGen] = useState(initialTargetGen);
 

@@ -9,14 +9,15 @@ import {
 import TableRow from './table-row';
 import useMethodMoveTable from '../../hooks/useMethodMoveTable';
 import Title from './title';
+import { sortMethodMoveByCellKey } from '../../utils/method-move';
 
 interface MethodMoveTableProps {
-  targetMoveList: Move[];
+  methodMoveList: Move[];
   moveMethod: MoveMethod
 }
 
 export default function MethodMoveTable({
-  targetMoveList,
+  methodMoveList,
   moveMethod,
 }: MethodMoveTableProps) {
   const {
@@ -24,24 +25,34 @@ export default function MethodMoveTable({
     isAsc,
     handleSortOrder,
   } = useMethodMoveTable(moveMethod);
+
+  if (methodMoveList.length === 0) {
+    return null;
+  }
+
   const tableHeadItemList = getTableHeadItemList(moveMethod);
 
+  const sortedMoveList = sortMethodMoveByCellKey(methodMoveList, targetCellKey, isAsc);
+
   return (
-    <div>
+    <div className="py-0.5 my-4 sm:my-3 lg:my-4 overflow-x-hidden">
       <Title moveMethod={moveMethod} />
-      <table className="border border-slate-300 ">
-        <MethodMoveTableHead
-          headItemList={tableHeadItemList}
-          targetCellKey={targetCellKey}
-          isAsc={isAsc}
-          handleSortOrder={handleSortOrder}
-        />
-        <tbody>
-          {targetMoveList.map((move) => (
-            <TableRow key={`${move.level}-${move.name.ko}`} move={move} moveMethod={moveMethod} />
-          ))}
-        </tbody>
-      </table>
+      <div className="overflow-auto">
+        <table className="border border-slate-300 w-[580px] table-fixed ">
+          <MethodMoveTableHead
+            headItemList={tableHeadItemList}
+            targetCellKey={targetCellKey}
+            isAsc={isAsc}
+            handleSortOrder={handleSortOrder}
+          />
+          <tbody>
+            {sortedMoveList.map((move) => (
+              <TableRow key={move.id} move={move} moveMethod={moveMethod} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+
     </div>
   );
 }

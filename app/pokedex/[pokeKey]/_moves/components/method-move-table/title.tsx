@@ -1,5 +1,5 @@
 import React from 'react';
-import { MoveMethod } from '../../config/move-method';
+import type { MoveMethod } from '@/app/models/detail.type';
 import {
   METHOD_MOVE_TITLE_LIST,
 } from '../../config/title';

@@ -1,4 +1,4 @@
-import type { MoveMethod } from './move-method';
+import type { MoveMethod } from '@/app/models/detail.type';
 
 const METHOD_MOVE_TITLE_LIST: Record<MoveMethod, string> = {
   'level-up': '레벌 업으로 익히는 기술',

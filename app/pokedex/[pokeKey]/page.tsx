@@ -30,7 +30,7 @@ export default async function Page({
       <PokeInformationList pokeList={pokeList} />
       <div>{pokeDetail?.speciesName.ko}</div>
       {pokeDetail && (
-        <PokeMoves moves={pokeDetail?.moves} />
+        <PokeMoves moves={pokeDetail?.moves} type='normal' />
       )}
     </div>
   );

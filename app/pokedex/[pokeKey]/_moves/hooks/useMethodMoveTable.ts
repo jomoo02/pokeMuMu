@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import type { MoveMethod } from '@/app/models/detail.type';
 import type { CellKey } from '../config/cell-key';
-import { Method } from '../config/move-method';
 
 function setInitialCellKeyWithMethod(method: MoveMethod): CellKey {
   const specialCase: Partial<Record<MoveMethod, CellKey>> = {
     pre: 'prePoke',
-    machine: 'machine',
+    hm: 'machine',
+    tm: 'machine',
+    tr: 'machine',
     'level-up': 'level',
   };
 
@@ -16,10 +17,6 @@ function setInitialCellKeyWithMethod(method: MoveMethod): CellKey {
     return specialCase[method];
   }
   return normal;
-}
-
-function setMethod(method: MoveMethod): Method {
-  
 }
 
 export default function useMethodMoveTable(method: MoveMethod) {
