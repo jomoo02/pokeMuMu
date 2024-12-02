@@ -2,7 +2,7 @@
 
 import React from 'react';
 import type { Move, MoveMethod } from '@/app/models/detail.type';
-import MethodMoveTableHead from './method-move-table-head';
+import TableHead from './table-head';
 import {
   getTableHeadItemList,
 } from '../../utils/table-head';
@@ -38,8 +38,8 @@ export default function MethodMoveTable({
     <div className="py-0.5 my-4 sm:my-3 lg:my-4 overflow-x-hidden">
       <Title moveMethod={moveMethod} />
       <div className="overflow-auto">
-        <table className="border border-slate-300 w-[580px] table-fixed ">
-          <MethodMoveTableHead
+        <table className="border border-slate-300  table-fixed ">
+          <TableHead
             headItemList={tableHeadItemList}
             targetCellKey={targetCellKey}
             isAsc={isAsc}

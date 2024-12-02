@@ -1,8 +1,6 @@
 import type {
   VersionMove,
-  MachineType,
   MoveMethod,
-  MachineMove,
   Move,
 } from '@/app/models/detail.type';
 
@@ -12,19 +10,19 @@ function checkEmptyVersionMove(versionMove: VersionMove) {
   return filterdVersionMove.length === 0;
 }
 
-function groupMachineType(machineMoveList: MachineMove[]) {
-  const machineTypeList: MachineType[] = ['tm', 'tr', 'hm'];
+// function groupMachineType(machineMoveList: MachineMove[]) {
+//   const machineTypeList: MachineType[] = ['tm', 'tr', 'hm'];
 
-  const filterMoveByMachineType = (type: MachineType) => (
-    machineMoveList
-      .filter(({ machine }) => machine.type === type)
-      .sort((a, b) => a.machine.number - b.machine.number)
-  );
+//   const filterMoveByMachineType = (type: MachineType) => (
+//     machineMoveList
+//       .filter(({ machine }) => machine.type === type)
+//       .sort((a, b) => a.machine.number - b.machine.number)
+//   );
 
-  return machineTypeList
-    .map((type) => ({ type, moveList: filterMoveByMachineType(type) }))
-    .filter(({ moveList }) => moveList.length > 0);
-}
+//   return machineTypeList
+//     .map((type) => ({ type, moveList: filterMoveByMachineType(type) }))
+//     .filter(({ moveList }) => moveList.length > 0);
+// }
 
 function categorizeVersionMove(versionMove: VersionMove) {
   const setVersionMoveItem = (method: MoveMethod, moveList: Move[]) => ({
@@ -53,5 +51,4 @@ function categorizeVersionMove(versionMove: VersionMove) {
 export {
   categorizeVersionMove,
   checkEmptyVersionMove,
-  groupMachineType,
 };

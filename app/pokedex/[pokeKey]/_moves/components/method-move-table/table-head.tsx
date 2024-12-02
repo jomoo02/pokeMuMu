@@ -3,19 +3,19 @@ import CaretIcon from '@/app/components/icon/caret';
 import type { TableHeadItem } from '../../config/table-head';
 import { CellKey } from '../../config/cell-key';
 
-interface MethodMoveTableHeadProps {
+interface TableHeadProps {
   headItemList: TableHeadItem[];
   targetCellKey: CellKey;
   handleSortOrder: (id: CellKey) => void;
   isAsc: boolean;
 }
 
-export default function MethodMoveTableHead({
+export default function TableHead({
   headItemList,
   targetCellKey,
   handleSortOrder,
   isAsc,
-}: MethodMoveTableHeadProps) {
+}: TableHeadProps) {
   const handleTableHeadItemClick = (id: CellKey) => {
     handleSortOrder(id);
   };
@@ -35,7 +35,7 @@ export default function MethodMoveTableHead({
             <button
               type="button"
               className={
-                `flex w-full h-full items-center justify-between px-1 ${id === targetCellKey ? 'bg-blue-100' : 'bg-slate-100'}`
+                `flex w-full h-full items-center justify-between px-1.5 ${id === targetCellKey ? 'bg-blue-100' : 'bg-slate-100'}`
               }
               onClick={() => handleTableHeadItemClick(id)}
             >

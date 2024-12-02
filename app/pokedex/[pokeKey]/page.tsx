@@ -25,12 +25,13 @@ export default async function Page({
     getPokeDetail(pokeKey),
   ]);
 
+  const type = pokeList[0].types[0];
+
   return (
     <div>
       <PokeInformationList pokeList={pokeList} />
-      <div>{pokeDetail?.speciesName.ko}</div>
       {pokeDetail && (
-        <PokeMoves moves={pokeDetail?.moves} type='normal' />
+        <PokeMoves moves={pokeDetail?.moves} type={type} />
       )}
     </div>
   );

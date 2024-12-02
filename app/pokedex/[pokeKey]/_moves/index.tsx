@@ -2,6 +2,7 @@ import React from 'react';
 import { Moves } from '@/app/models/detail.type';
 import { PokeType } from '@/app/data/poke-type';
 import MoveList from './components/move-list';
+import Header from '../components/header';
 
 interface PokeMovesProps {
   moves: Moves;
@@ -18,7 +19,13 @@ export default function PokeMoves({
 
   return (
     <div>
-      <MoveList moves={moves} type={type} />
+      <Header
+        type={type}
+        text="기술"
+      />
+      <div className={`border-2 border-t-0 ${type}-border rounded-b-sm`}>
+        <MoveList moves={moves} type={type} />
+      </div>
     </div>
   );
 }

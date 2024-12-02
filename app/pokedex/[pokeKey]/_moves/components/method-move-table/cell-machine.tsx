@@ -8,10 +8,9 @@ interface CellMachineProps {
 export default function CellMachine({
   move,
 }: CellMachineProps) {
-  if (!move.machine?.number) {
+  if (move.machine?.number !== 0 && !move.machine?.number) {
     return null;
   }
-
   const machineNumber = Number(move.machine.number);
 
   const formattedMachineNumber = machineNumber >= 10

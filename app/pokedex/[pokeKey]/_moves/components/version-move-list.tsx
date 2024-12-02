@@ -27,8 +27,8 @@ export default function VersionMoveList({
   } = categorizeVersionMove(versionMoveList);
 
   return (
-    <div className="flex flex-wrap xl:py-3">
-      <div className="grid w-full xl:w-1/2">
+    <div className="grid xl:grid-cols-2 xl:py-3 xl:px-2">
+      <div className="overflow-x-hidden">
         {methodMoveLst.map(({ method, moveList }) => (
           <MethodMoveTable
             key={method}
@@ -38,7 +38,7 @@ export default function VersionMoveList({
         ))}
       </div>
       {machineMoveList.length > 0 && (
-        <div className="grid w-full xl:w-1/2 xl:justify-end">
+        <div className="overflow-x-hidden xl:grid xl:justify-end">
           {machineMoveList.map(({ method, moveList }) => (
             <MethodMoveTable
               key={method}
@@ -50,4 +50,28 @@ export default function VersionMoveList({
       )}
     </div>
   );
+  // return (
+  //   <div className="flex flex-wrap xl:py-3">
+  //     <div className="grid w-full xl:w-1/2">
+  //       {methodMoveLst.map(({ method, moveList }) => (
+  //         <MethodMoveTable
+  //           key={method}
+  //           moveMethod={method}
+  //           methodMoveList={moveList}
+  //         />
+  //       ))}
+  //     </div>
+  //     {machineMoveList.length > 0 && (
+  //       <div className="grid w-full xl:w-1/2 xl:justify-end">
+  //         {machineMoveList.map(({ method, moveList }) => (
+  //           <MethodMoveTable
+  //             key={method}
+  //             moveMethod={method}
+  //             methodMoveList={moveList}
+  //           />
+  //         ))}
+  //       </div>
+  //     )}
+  //   </div>
+  // );
 }
