@@ -5,6 +5,7 @@ import type { Poke } from '@/app/models/poke.type';
 import Information from './components/information';
 import PokeStats from '../_stats';
 import PokeDefenseCompatibility from '../_defense-compatibility';
+import PokeAbilities from '../_abilities';
 
 interface PokeInformationListProps {
   pokeList: Poke[];
@@ -31,6 +32,7 @@ export default function PokeInformationList({
         ))}
       </div>
       <Information poke={targetPoke} />
+      <PokeAbilities abilities={targetPoke.abilities} type={targetPoke.types[0]} />
       <PokeStats stats={targetPoke.stats} type={targetPoke.types[0]} />
       <PokeDefenseCompatibility types={targetPoke.types} />
     </div>

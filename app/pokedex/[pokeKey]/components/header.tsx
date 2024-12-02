@@ -12,7 +12,7 @@ export default function Header({
 }: HeaderProps) {
   return (
     <div className={`${type} rounded-t-md`}>
-      <h2 className="text-white text-center font-semibold py-[3px] md:py-1.5 text-sm">
+      <h2 className="text-white text-center font-semibold py-[3px] md:py-1.5 text-sm lg:text-base">
         {text}
       </h2>
     </div>
