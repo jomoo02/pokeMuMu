@@ -3,8 +3,10 @@ import PokeInformationList from './_information';
 import {
   getPokeList,
   getPokeDetail,
+  getPokeEvolution,
 } from './utils/get-poke';
 import PokeMoves from './_moves';
+import PokeEvolution from './_evolution';
 
 interface PageProps {
   params: {
@@ -20,9 +22,11 @@ export default async function Page({
   const [
     pokeList,
     pokeDetail,
+    pokeEvolution,
   ] = await Promise.all([
     getPokeList(pokeKey),
     getPokeDetail(pokeKey),
+    getPokeEvolution(pokeKey),
   ]);
 
   const type = pokeList[0].types[0];
@@ -30,6 +34,9 @@ export default async function Page({
   return (
     <div>
       <PokeInformationList pokeList={pokeList} />
+      {pokeEvolution && (
+        <PokeEvolution type={type} evolution={pokeEvolution} />
+      )}
       {pokeDetail && (
         <PokeMoves moves={pokeDetail?.moves} type={type} />
       )}
