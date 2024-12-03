@@ -8,7 +8,7 @@ function NeedsOverworldRain({
   value,
 }: RainProps) {
   if (!value) {
-    return null;
+    return <span />;
   }
 
   const content = '비가 오는 필드';

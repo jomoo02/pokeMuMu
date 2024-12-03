@@ -3,6 +3,7 @@ import type { PokeType } from '@/app/data/poke-type';
 import type { Evolution } from '@/app/models/evolution.type';
 import Header from '../components/header';
 import AreaList from './components/area-list';
+import PokeChain from './components/chain';
 
 interface PokeEvolutionProps {
   type: PokeType;
@@ -15,7 +16,6 @@ export default function PokeEvolution({
 }: PokeEvolutionProps) {
   const {
     id,
-    ...chain
   } = evolution;
 
   return (
@@ -25,7 +25,7 @@ export default function PokeEvolution({
         text="진화"
       />
       <div className={`border-2 border-t-0 ${type}-border rounded-b-sm`}>
-        {/* <PokeChain chainObj={pokeEvolutionChain} /> */}
+        <PokeChain evolution={evolution} />
         <AreaList id={id} type={type} />
       </div>
     </div>

@@ -9,23 +9,13 @@ import {
 } from '@/app/data/poke-type';
 import MoveLink from '@/app/components/move-link';
 
-interface NormalMoveProps {
-  move: string;
-  suffix: string;
-}
-
-interface MoveProps {
-  value: EvolutionMove;
-}
-
-interface MoveTypeProps {
-  value: PokeType;
-}
-
 function NormalMove({
   move,
   suffix,
-}: NormalMoveProps) {
+}: {
+  move: string;
+  suffix: string;
+}) {
   return (
     <span>
       <MoveLink move={move} />
@@ -36,7 +26,9 @@ function NormalMove({
 
 function KnownMove({
   value,
-}: MoveProps) {
+}: {
+  value: EvolutionMove;
+}) {
   const move = EVOLUTION_MOVE_LIST[value];
 
   return <NormalMove move={move} suffix="배운 상태에서" />;
@@ -44,7 +36,9 @@ function KnownMove({
 
 function AgileStyle({
   value,
-}: MoveProps) {
+}: {
+  value: EvolutionMove;
+}) {
   const move = EVOLUTION_MOVE_LIST[value];
 
   return <NormalMove move={move} suffix="속공으로 20번 사용" />;
@@ -52,7 +46,9 @@ function AgileStyle({
 
 function StrongStyle({
   value,
-}: MoveProps) {
+}: {
+  value: EvolutionMove;
+}) {
   const move = EVOLUTION_MOVE_LIST[value];
 
   return <NormalMove move={move} suffix="강공으로 20번 사용" />;
@@ -60,7 +56,9 @@ function StrongStyle({
 
 function UsedMove({
   value,
-}: MoveProps) {
+}: {
+  value: EvolutionMove;
+}) {
   const move = EVOLUTION_MOVE_LIST[value];
 
   return <NormalMove move={move} suffix="20번 사용 후" />;
@@ -68,7 +66,9 @@ function UsedMove({
 
 function KnownMoveType({
   value,
-}: MoveTypeProps) {
+}: {
+  value: PokeType;
+}) {
   const type = POKE_TYPE_LIST[value];
 
   const content = `${type} 타입 기술을 배우고`;
