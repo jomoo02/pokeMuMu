@@ -1,13 +1,17 @@
 import React from 'react';
 
 interface GenderProps {
-  value: 1 | 2;
+  value: string | number | boolean;
 }
 
 function Gender({
   value,
 }: GenderProps) {
-  const genderTextMap = {
+  if (typeof value !== 'number' || (value !== 1 && value !== 2)) {
+    return null;
+  }
+
+  const genderTextMap: Record<1 | 2, string> = {
     1: '암컷',
     2: '수컷',
   };

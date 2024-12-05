@@ -55,6 +55,9 @@ export type ConditionKey =
   | 'area';
 
 export type ConditionValueMap = {
+  other: OtherPoke;
+  spin: string;
+  turn_upside_down: boolean;
   gender: 1 | 2;
   item: EvolutionItem;
   held_item: EvolutionItem;
@@ -73,9 +76,6 @@ export type ConditionValueMap = {
   party_type: PokeType;
   party_species: PartySpeciesPoke;
   recoil_damage: number;
-  spin: string;
-  turn_upside_down: boolean;
-  other: OtherPoke;
   relative_nature: 'amped' | 'lowKey';
   relative_physical_stats: number;
   time_of_day: TimeOfDay;
