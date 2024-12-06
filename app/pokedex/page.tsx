@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/pokedex.css';
-import { getPokeList } from './utils/get-poke';
+import { getPokeList } from './lib/get-poke';
 import MemoedPokeCardList from './components/poke-card-list';
 
 export const revalidate = 3600;

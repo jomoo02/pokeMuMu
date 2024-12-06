@@ -5,7 +5,7 @@ import {
   getPokeDetail,
   getPokeEvolution,
   getPokeSurrounding,
-} from './utils/get-poke';
+} from './lib/get-poke';
 import PokeMoves from './_moves';
 import PokeEvolution from './_evolution';
 import PokeNavigation from './_navigation';

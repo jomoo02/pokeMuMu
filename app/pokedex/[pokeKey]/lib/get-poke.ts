@@ -1,7 +1,7 @@
 import { cache } from 'react';
-import { fetchPokeWithPokeKey, fetchSurroundingPoke } from '../lib/poke';
-import { fetchPokeDetailWithPokeKey } from '../lib/detail';
-import { fetchPokeEvolutionWiethPokeKey } from '../lib/evolution';
+import { fetchPokeWithPokeKey, fetchSurroundingPoke } from '../api/poke';
+import { fetchPokeDetailWithPokeKey } from '../api/detail';
+import { fetchPokeEvolutionWiethPokeKey } from '../api/evolution';
 
 export const getPokeList = cache(async (pokeKey: string) => {
   const pokeList = await fetchPokeWithPokeKey(pokeKey);
