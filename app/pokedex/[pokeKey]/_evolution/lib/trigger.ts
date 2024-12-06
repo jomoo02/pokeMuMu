@@ -1,12 +1,11 @@
 import type {
   ConditionItem,
-  ConditionKey,
   TriggerKey,
 } from '@/app/models/evolution.type';
 
-export function getTriggerContent<C extends ConditionKey>(
+export function getTriggerContent(
   trigger: TriggerKey,
-  conditionList: ConditionItem<C>[],
+  conditionList: ConditionItem[],
 ) {
   const triggerContent = (() => {
     if (trigger === 'level-up' && !conditionList.find(({ key }) => key === 'min_level')) {

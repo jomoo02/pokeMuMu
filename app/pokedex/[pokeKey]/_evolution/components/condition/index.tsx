@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ConditionKey, ConditionValueMap } from '@/app/models/evolution.type';
+import type { ConditionKey, ConditionValue } from '@/app/models/evolution.type';
 import ConditionGender from './gender';
 import ConditionItem from './item';
 import ConditionLocation from './location';
@@ -40,18 +40,16 @@ const conditionKeyMap = {
   trade_species: ConditionTrade.Species,
 };
 
-interface ConditionProps<C extends ConditionKey> {
-  conditionKey: C;
-  value: ConditionValueMap[C];
+interface ConditionProps {
+  conditionKey: ConditionKey;
+  value: ConditionValue;
 }
 
-export default function Condition<C extends ConditionKey>({
+export default function Condition({
   conditionKey,
   value,
-}: ConditionProps<C>) {
-  const Component = conditionKeyMap[conditionKey] as React.ComponentType<{
-    value: ConditionValueMap[C];
-  }>;
+}: ConditionProps) {
+  const Component = conditionKeyMap[conditionKey];
 
   if (!Component) {
     return null;

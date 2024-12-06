@@ -11,7 +11,7 @@ const AREA_KEY_LIST: Area[] = [
   'mountLanakila',
 ];
 
-const AREA_LIST: Record<Area, string> = {
+const AREA_LIST_KO: Record<Area, string> = {
   mossyRock: '이끼 낀 바위 근처',
   icyRock: '얼음 바위 근처',
   magneticField: '자기장 영역',
@@ -20,5 +20,5 @@ const AREA_LIST: Record<Area, string> = {
 
 export {
   AREA_KEY_LIST,
-  AREA_LIST,
+  AREA_LIST_KO,
 };

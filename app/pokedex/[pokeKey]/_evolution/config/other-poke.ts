@@ -1,4 +1,14 @@
-import type { OtherPoke } from '@/app/models/evolution.type';
+export type OtherPoke =
+  'sirfetchD'
+  | 'shedinja'
+  | 'runerigus'
+  | 'kingambit'
+  | 'urshifu_single'
+  | 'urshifu_rapid'
+  | 'lets_go'
+  | 'maushold'
+  | 'palafin'
+  | 'gholdengo';
 
 const OTHER_POKE_CONTENT: Record<OtherPoke, string> = {
   sirfetchD: '한 전투에서 급소를 3번 맞힌다',

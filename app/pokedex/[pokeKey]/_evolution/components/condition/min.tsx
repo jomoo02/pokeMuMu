@@ -1,7 +1,8 @@
 import React from 'react';
+import type { ConditionValue } from '@/app/models/evolution.type';
 
 interface MinProps {
-  value: number;
+  value: ConditionValue;
 }
 
 function Affection({

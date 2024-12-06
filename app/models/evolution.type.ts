@@ -82,14 +82,21 @@ export type ConditionValueMap = {
   trade_species: TradeSpeciesPoke;
 };
 
-export type ConditionItem<C extends ConditionKey> = {
-  key: C;
-  value: ConditionValueMap[C];
+// export type ConditionItem<C extends ConditionKey> = {
+//   key: C;
+//   value: ConditionValueMap[C];
+// };
+
+export type ConditionValue = number | string | boolean;
+
+export type ConditionItem = {
+  key: ConditionKey;
+  value: ConditionValue;
 };
 
 export type Detail = {
   trigger: TriggerKey;
-  condition: ConditionItem<ConditionKey>[];
+  condition: ConditionItem[];
 };
 
 export type ChainItem = {

@@ -1,4 +1,5 @@
 import React from 'react';
+import type { ConditionValue } from '@/app/models/evolution.type';
 import {
   PARTY_SPECIES,
   type PartySpeciesPoke,
@@ -9,37 +10,44 @@ import {
   type PokeType,
 } from '@/app/data/poke-type';
 
-interface PartySpeciesProps {
-  value: PartySpeciesPoke;
+interface PartyProps {
+  value: ConditionValue;
 }
 
-interface PartyTypeProps {
-  value: PokeType;
-}
+const isPartySpecies = (v: string): v is PartySpeciesPoke => v in PARTY_SPECIES;
+
+const isPokeType = (v: string): v is PokeType => v in POKE_TYPE_LIST;
 
 function PartySpecies({
   value,
-}: PartySpeciesProps) {
-  const pokeContent = PARTY_SPECIES[value];
+}: PartyProps) {
+  if (typeof value === 'string' && isPartySpecies(value)) {
+    const content = PARTY_SPECIES[value];
 
-  return (
-    <span>
-      <PokeLinkWithSubjectParticle
-        poke={value}
-        content={pokeContent}
-      />
-      <span className="ml-1">있을 때</span>
-    </span>
-  );
+    return (
+      <span>
+        <PokeLinkWithSubjectParticle
+          poke={value}
+          content={content}
+        />
+        <span className="ml-1">있을 때</span>
+      </span>
+    );
+  }
+
+  return null;
 }
 
 function PartyType({
   value,
-}: PartyTypeProps) {
-  const type = POKE_TYPE_LIST[value];
-  const content = `${type} 타입 포켓몬을 지니고 있는 상태`;
+}: PartyProps) {
+  if (typeof value === 'string' && isPokeType(value)) {
+    const content = `${POKE_TYPE_LIST[value]} 타입 포켓몬을 지니고 있는 상태`;
 
-  return <span>{content}</span>;
+    return <span>{content}</span>;
+  }
+
+  return null;
 }
 
 const ConditionParty = {

@@ -50,7 +50,7 @@ const HELD_ITEM_LIST = {
   'oval-stone': '동글동글돌',
 };
 
-const EVOLUTION_ITEM_LIST = {
+const EVOLUTION_ITEM_LIST: Record<string, string> = {
   ...USE_ITEM_LIST,
   ...TRADE_ITEM_LIST,
   ...HELD_ITEM_LIST,

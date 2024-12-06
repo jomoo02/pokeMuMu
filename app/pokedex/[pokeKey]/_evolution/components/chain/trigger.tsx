@@ -1,20 +1,19 @@
 import React from 'react';
 import type {
   ConditionItem,
-  ConditionKey,
   TriggerKey,
 } from '@/app/models/evolution.type';
 import { getTriggerContent } from '../../lib/trigger';
 
-interface TriggerProps<C extends ConditionKey> {
+interface TriggerProps {
   trigger: TriggerKey;
-  conditionList: ConditionItem<C>[];
+  conditionList: ConditionItem[];
 }
 
-export default function Trigger<C extends ConditionKey>({
+export default function Trigger({
   trigger,
   conditionList,
-}: TriggerProps<C>) {
+}: TriggerProps) {
   const triggerContent = getTriggerContent(trigger, conditionList);
 
   if (!triggerContent) {

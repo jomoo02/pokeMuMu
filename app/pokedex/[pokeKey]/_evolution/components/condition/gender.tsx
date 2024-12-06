@@ -1,8 +1,14 @@
 import React from 'react';
+import type { ConditionValue } from '@/app/models/evolution.type';
 
 interface GenderProps {
-  value: string | number | boolean;
+  value: ConditionValue;
 }
+
+const GENDER_TEXT_MAP: Record<1 | 2, string> = {
+  1: '암컷',
+  2: '수컷',
+};
 
 function Gender({
   value,
@@ -11,12 +17,7 @@ function Gender({
     return null;
   }
 
-  const genderTextMap: Record<1 | 2, string> = {
-    1: '암컷',
-    2: '수컷',
-  };
-
-  const content = genderTextMap[value];
+  const content = GENDER_TEXT_MAP[value];
 
   return <span>{content}</span>;
 }

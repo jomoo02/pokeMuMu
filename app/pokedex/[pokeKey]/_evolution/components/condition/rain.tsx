@@ -1,19 +1,20 @@
 import React from 'react';
+import type { ConditionValue } from '@/app/models/evolution.type';
 
 interface RainProps {
-  value: boolean;
+  value: ConditionValue;
 }
 
 function NeedsOverworldRain({
   value,
 }: RainProps) {
-  if (!value) {
-    return <span />;
+  if (typeof value === 'boolean' && value) {
+    const content = '비가 오는 필드';
+
+    return <span>{content}</span>;
   }
 
-  const content = '비가 오는 필드';
-
-  return <span>{content}</span>;
+  return null;
 }
 
 const ConditionRain = {

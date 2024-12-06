@@ -4,24 +4,31 @@ import {
   TRADE_SPECEIS,
   type TradeSpeciesPoke,
 } from '@/app/data/evolution-poke';
+import type { ConditionValue } from '@/app/models/evolution.type';
 
 interface SpeciesProps {
-  value: TradeSpeciesPoke;
+  value: ConditionValue;
 }
+
+const isSpecies = (v: string): v is TradeSpeciesPoke => v in TRADE_SPECEIS;
 
 function Species({
   value,
 }: SpeciesProps) {
-  const content = TRADE_SPECEIS[value];
+  if (typeof value === 'string' && isSpecies(value)) {
+    const content = TRADE_SPECEIS[value];
 
-  return (
-    <span>
-      <PokeLinkWithParticleForAnd
-        poke={value}
-        content={content}
-      />
-    </span>
-  );
+    return (
+      <span>
+        <PokeLinkWithParticleForAnd
+          poke={value}
+          content={content}
+        />
+      </span>
+    );
+  }
+
+  return null;
 }
 
 const ConditionTrade = {

@@ -1,38 +1,44 @@
 import React from 'react';
 import {
-  AREA_LIST,
   type Area,
+  AREA_LIST_KO,
 } from '@/app/data/area';
 import {
-  REGION_LIST,
   type Region,
+  REGION_LIST_KO,
 } from '@/app/data/region';
+import { ConditionValue } from '@/app/models/evolution.type';
 
-interface LocationRegionProps {
-  value: Region;
+interface LocationProps {
+  value: ConditionValue;
 }
 
-interface LocationAreaProps {
-  value: Area;
-}
+const isRegion = (region: string): region is Region => region in REGION_LIST_KO;
+
+const isArea = (area: string): area is Area => area in AREA_LIST_KO;
 
 function LocationRegion({
   value,
-}: LocationRegionProps) {
-  const region = REGION_LIST[value];
+}: LocationProps) {
+  if (typeof value === 'string' && isRegion(value)) {
+    const region = REGION_LIST_KO[value];
 
-  return <span>{region}</span>;
+    return <span>{region}</span>;
+  }
+
+  return null;
 }
 
 function LocationArea({
   value,
-}: LocationAreaProps) {
-  const area = AREA_LIST[value];
+}: LocationProps) {
+  if (typeof value === 'string' && isArea(value)) {
+    const area = AREA_LIST_KO[value];
 
-  if (!area) {
-    return <span>특정장소에서</span>;
+    return <span>{`${area}에서`}</span>;
   }
-  return <span>{`${area}에서`}</span>;
+
+  return <span>특정장소에서</span>;
 }
 
 const ConditionLocation = {
