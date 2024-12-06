@@ -31,8 +31,8 @@ export default function ChainPokeDetail({
         {detail.map(({ trigger, condition }, index) => (
           <Fragment key={`${trigger}-${condition.map(({ key, value }) => `${key}-${value}`).join('/')}`}>
             {index > 0 && <div>or</div>}
-            <Trigger trigger={trigger} conditionList={condition} />
             <ConditionList conditionList={condition} />
+            <Trigger trigger={trigger} conditionList={condition} />
           </Fragment>
         ))}
       </div>

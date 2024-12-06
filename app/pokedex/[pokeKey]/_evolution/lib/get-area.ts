@@ -4,10 +4,10 @@ import {
 } from '@/app/data/area';
 import type {
   RegionalArea,
-} from '../config/area.type';
-import { MAGNETIC_FILED_REGIONAL_AREA } from '../config/area-magnetic-filed';
-import { MOSSY_ROCK_REGIONAL_AREA } from '../config/area-mossy-rock';
-import { ICY_ROCK_REGIONAL_AREA } from '../config/area-icy-rock';
+} from '../data/area.type';
+import { MAGNETIC_FILED_REGIONAL_AREA } from '../data/area-magnetic-filed';
+import { MOSSY_ROCK_REGIONAL_AREA } from '../data/area-mossy-rock';
+import { ICY_ROCK_REGIONAL_AREA } from '../data/area-icy-rock';
 
 const AREA_CASE = [34, 62, 123, 265];
 

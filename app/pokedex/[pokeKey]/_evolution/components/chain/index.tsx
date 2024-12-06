@@ -2,7 +2,7 @@
 
 import React from 'react';
 import type { ChainItem, Evolution } from '@/app/models/evolution.type';
-import ChainPoke from './poke';
+import ChainPoke from './chain-poke';
 import { ChainProvider, useChainMaxWidth } from './chain.context';
 
 interface NestedChainProps {
@@ -22,7 +22,9 @@ const gridColumnClassNames: Record<number, string> = {
   8: 'grid grid-cols-2 lg:grid-cols-4',
 };
 
-function NestedChain({ chainItem }: NestedChainProps) {
+function NestedChain({
+  chainItem,
+}: NestedChainProps) {
   const maxWidth = useChainMaxWidth();
 
   const nextChainCount = chainItem.to.length;
@@ -56,10 +58,6 @@ export default function PokeChain({
     maxDepth,
     maxWidth,
   } = evolution;
-
-  if (!chain) {
-    return null;
-  }
 
   const chainGridClassName = gridColumnClassNames[chain.length];
 

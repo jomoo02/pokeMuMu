@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import type { ChainItem } from '@/app/models/evolution.type';
 import { useChainMaxWidth } from './chain.context';
-import ChainPokeDetail from './poke-detail';
-import ChainPokeLink from './poke-link';
+import ChainPokeDetail from './chain-poke-detail';
+import ChainPokeLink from './chain-poke-link';
 
 function PokeImage({
   id,

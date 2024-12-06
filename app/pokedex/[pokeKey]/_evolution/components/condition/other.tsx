@@ -4,7 +4,7 @@ import { ItmeLinkWithParticle } from '@/app/components/item-link';
 import {
   type OtherPoke,
   OTHER_POKE_CONTENT,
-} from '../../config/other-poke';
+} from '../../data/other-poke';
 
 interface OtherProps {
   value: ConditionValue;

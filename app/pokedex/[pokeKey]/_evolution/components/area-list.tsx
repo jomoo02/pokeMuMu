@@ -1,7 +1,7 @@
 import React from 'react';
 import type { PokeType } from '@/app/data/poke-type';
 import { getAreaList } from '../lib/get-area';
-import type { RegionalArea } from '../config/area.type';
+import type { RegionalArea } from '../data/area.type';
 
 interface AreaProps {
   regionalAreaList: RegionalArea[];

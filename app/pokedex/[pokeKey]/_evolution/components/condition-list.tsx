@@ -1,17 +1,20 @@
 import React, { Fragment } from 'react';
-import type { ConditionItem, ConditionKey } from '@/app/models/evolution.type';
+import type { ConditionItem } from '@/app/models/evolution.type';
 import Condition from './condition';
+import { sortConditionList } from '../lib/condition-list';
 
 interface ConditionListProps {
-  conditionList: ConditionItem<ConditionKey>[];
+  conditionList: ConditionItem[];
 }
 
 export default function ConditionList({
   conditionList,
 }: ConditionListProps) {
+  const sortedConditionList = sortConditionList(conditionList);
+
   return (
     <>
-      {conditionList.map(({ key, value }, index) => (
+      {sortedConditionList.map(({ key, value }, index) => (
         <Fragment key={key}>
           {index > 0 && <span>+</span>}
           <Condition
