@@ -1,7 +1,7 @@
 import React from 'react';
 import CaretIcon from '@/app/components/icon/caret';
-import type { TableHeadItem } from '../../config/table-head';
-import { CellKey } from '../../config/cell-key';
+import type { TableHeadItem } from '../../data/table-head';
+import { CellKey } from '../../data/cell-key';
 
 interface TableHeadProps {
   headItemList: TableHeadItem[];

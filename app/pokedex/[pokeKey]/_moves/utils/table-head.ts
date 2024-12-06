@@ -8,7 +8,7 @@ import {
   prePokeHeadItem,
   getMachineHeadItem,
   type TableHeadItem,
-} from '../config/table-head';
+} from '../data/table-head';
 
 export function getTableHeadItemList(method: MoveMethod): TableHeadItem[] {
   if (method === 'level-up') {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { MoveMethod } from '@/app/models/detail.type';
-import type { CellKey } from '../config/cell-key';
+import type { CellKey } from '../data/cell-key';
 
 function setInitialCellKeyWithMethod(method: MoveMethod): CellKey {
   const specialCase: Partial<Record<MoveMethod, CellKey>> = {

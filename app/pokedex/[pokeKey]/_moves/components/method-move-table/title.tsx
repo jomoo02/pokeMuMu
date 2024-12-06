@@ -2,7 +2,7 @@ import React from 'react';
 import type { MoveMethod } from '@/app/models/detail.type';
 import {
   METHOD_MOVE_TITLE_LIST,
-} from '../../config/title';
+} from '../../data/title';
 
 interface TitleProps {
   moveMethod: MoveMethod;

@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { fetchPokeWithPokeKey } from '../lib/poke';
+import { fetchPokeWithPokeKey, fetchSurroundingPoke } from '../lib/poke';
 import { fetchPokeDetailWithPokeKey } from '../lib/detail';
 import { fetchPokeEvolutionWiethPokeKey } from '../lib/evolution';
 
@@ -20,3 +20,15 @@ export const getPokeEvolution = cache(async (pokeKey: string) => {
 
   return pokeEvolution;
 });
+
+export const getPokeSurrounding = cache(async (pokeKey: string, order: number) => {
+  const pokeSurrouding = await fetchSurroundingPoke(pokeKey, order);
+
+  return pokeSurrouding;
+});
+
+// export const getPokeSurrounding = cache(async (pokeKey: string, order: number) => {
+//   const pokeSurrouding = await fetchSurroundingPoke(pokeKey, order);
+
+//   return pokeSurrouding;
+// });

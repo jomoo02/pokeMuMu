@@ -20,3 +20,42 @@ export async function fetchPokeWithPokeKey(pokeKey: string) {
     return [];
   }
 }
+
+export async function fetchSurroundingPoke(pokeKey: string, order: number) {
+  try {
+    await dbConnect();
+
+    const projection = { _id: 0 };
+
+    const beforeQuery = { order: { $lt: order }, pokeKey: { $ne: pokeKey } };
+
+    const beforetOptions = { sort: { order: -1 } };
+
+    const nextQuery = { order: { $gt: order }, pokeKey: { $ne: pokeKey } };
+
+    const nextOptions = { sort: { order: 1 } };
+
+    const beforePoke = await PokeV3Model.findOne(
+      beforeQuery,
+      projection,
+      beforetOptions,
+    ).lean<Poke>();
+
+    const nextPoke = await PokeV3Model.findOne(
+      nextQuery,
+      projection,
+      nextOptions,
+    ).lean<Poke>();
+
+    return {
+      before: beforePoke || null,
+      next: nextPoke || null,
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      before: null,
+      next: null,
+    };
+  }
+}

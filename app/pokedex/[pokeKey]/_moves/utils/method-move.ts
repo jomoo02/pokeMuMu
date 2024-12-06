@@ -1,5 +1,5 @@
 import type { Move } from '@/app/models/detail.type';
-import type { CellKey } from '../config/cell-key';
+import type { CellKey } from '../data/cell-key';
 
 const compareFunctionList: Record<CellKey, (a: Move, b: Move) => number> = {
   level: (a, b) => (a.level ?? -1) - (b.level ?? -1),
