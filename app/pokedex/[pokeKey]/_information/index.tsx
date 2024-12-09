@@ -17,14 +17,15 @@ export default function PokeInformationList({
   const [targetPoke, setTargetPoke] = useState(pokeList[0]);
 
   const handlePokeClick = (poke: Poke) => setTargetPoke(poke);
+
   return (
     <div>
-      <div className="flex gap-x-1">
+      <div className="flex gap-x-1 py-1">
         {pokeList.map((poke) => (
           <button
             key={poke.name.ko}
             type="button"
-            className="bg-blue-200 rounded-md"
+            className="bg-blue-200 rounded-lg text-lg font-semibold px-2 py-1"
             onClick={() => handlePokeClick(poke)}
           >
             {poke.name.ko}

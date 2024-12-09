@@ -29,8 +29,8 @@ export default function RootLayout({
 }: RootLayoutProps) {
   return (
     <html lang="ko">
-      <body className={`${inter.className} ${pretendard.variable} antialiased`}>
-        <main className="sm:px-8 md:px-10 py-6 min-h-svh xl:px-16">
+      <body className={`${inter.className} ${pretendard.variable} antialiased bg-slate-50`}>
+        <main className="sm:px-8 md:px-10 py-6 min-h-svh xl:px-14 2xl:px-36">
           {children}
         </main>
         <footer className="h-32" />
