@@ -1,50 +1,37 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import PokeTypeBadge from '@/app/components/poke-type-badge';
-import type { Poke } from '@/app/models/poke.type';
-import usePokeCard from '../hooks/usePokeCard';
-import PokeCardStats from './poke-card-stats';
+import type { PokedexPoke } from '@/app/models/pokev4.type';
+import usePokeCard from '../../hooks/usePokeCard';
+import StatList from './stat-list';
+import PokeImg from './poke-img';
 
 interface PokeCardProps {
-  poke: Poke;
+  poke: PokedexPoke;
 }
 
-export default function PokeCard({ poke }: PokeCardProps) {
+export default function PokeCard({
+  poke,
+}: PokeCardProps) {
   const {
-    sprite,
     name,
     types,
     form,
     pokeKey,
     no,
+    src,
     stats,
     handlePokeCardClick,
   } = usePokeCard(poke);
 
-  const src = `https://raw.githubusercontent.com/jomoo02/poke_sprites/refs/heads/main/home/${sprite}.png`;
-
   return (
     <div className="flex items-stretch h-16 hover:bg-blue-100">
-      <div className="w-card-number flex items-center text-[13px] xl:text-sm text-slate-600 font-semibold">
+      <div className="min-w-[4rem] w-[4rem] xl:min-w-[4.5rem] xl:w-[4.5rem] px-2.5 flex items-center text-[13px] xl:text-sm text-slate-600 font-semibold">
         {`#${no}`}
       </div>
-      <div className="w-card-name flex">
+      <div className="grow px-2 flex">
         <div className="flex items-center px-2">
-          <div className="w-card-img">
-            <Image
-              placeholder="blur"
-              blurDataURL="/pokeball.svg"
-              src={src}
-              alt={name}
-              fill
-              sizes="48px"
-              style={{
-                objectFit: 'contain',
-              }}
-              priority={false}
-            />
-          </div>
+          <PokeImg src={src} alt={no} />
         </div>
         <div className="grid grow items-center px-3 xl:px-3.5">
           <div>
@@ -63,7 +50,7 @@ export default function PokeCard({ poke }: PokeCardProps) {
           </div>
         </div>
       </div>
-      <div className="w-card-type flex flex-col gap-y-1 items-center justify-center">
+      <div className="min-w-24 w-24 px-2 flex flex-col gap-y-1 items-center justify-center">
         {types.map((type) => (
           <div key={type}>
             <PokeTypeBadge type={type} />
@@ -71,7 +58,7 @@ export default function PokeCard({ poke }: PokeCardProps) {
         ))}
       </div>
       <div className="text-sm hidden md:flex items-center">
-        <PokeCardStats stats={stats} />
+        <StatList stats={stats} />
       </div>
     </div>
   );

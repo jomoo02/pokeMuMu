@@ -10,12 +10,9 @@ interface PokeDefenseCompatibilityProps {
 export default function PokeDefenseCompatibility({
   types,
 }: PokeDefenseCompatibilityProps) {
-  const mainType = types[0];
-
   return (
     <div>
       <Header
-        type={mainType}
         text="방어 상성"
       />
       <DefenseCompatibility pokeTypes={types} />

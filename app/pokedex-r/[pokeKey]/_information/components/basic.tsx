@@ -1,6 +1,6 @@
 import React from 'react';
 import PokeTypeBadge from '@/app/components/poke-type-badge';
-import type { Poke } from '@/app/models/poke.type';
+import type { Poke } from '@/app/models/pokev4.type';
 import { classifyPokedexNumber } from '../utils/baisc';
 import InfoItem from './info-item';
 import InfoTitle from './info-title';

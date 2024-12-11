@@ -15,6 +15,7 @@ const PokeV3Scema = new mongoose.Schema<Poke>({
   no: Number,
   id: Number,
   pokedexNumbers: Array,
+  order2: Number,
 });
 
 const PokeV3Model = mongoose.models?.PokeV3 || mongoose.model<Poke>('PokeV3', PokeV3Scema);

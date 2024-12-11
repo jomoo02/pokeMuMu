@@ -1,7 +1,7 @@
 import React from 'react';
 import PokeTypeBadge from '@/app/components/poke-type-badge';
 import type { PokeType } from '@/app/data/poke-type';
-import { formatDefenseCompatibility } from '../utils/defense-compatibility';
+import { formatDefenseCompatibility } from '../lib/defense-compatibility';
 import DamageRate from './damage-rate';
 
 interface DefenseCompatibilityProps {
@@ -11,13 +11,11 @@ interface DefenseCompatibilityProps {
 export default function DefenseCompatibility({
   pokeTypes,
 }: DefenseCompatibilityProps) {
-  const mainType = pokeTypes[0];
-
   const targetDfCompatibility = formatDefenseCompatibility(pokeTypes);
 
   return (
-    <div className={`border-2 border-t-0 ${mainType}-border rounded-b-sm`}>
-      <div className={`flex py-1 md:py-1.5 justify-center items-center gap-x-2.5 border-b-2 ${mainType}-border`}>
+    <div className="border-2 border-t-0 rounded-b-sm">
+      <div className="flex py-1 md:py-1.5 justify-center items-center gap-x-2.5 border-b-2">
         <div className="flex gap-x-2">
           {pokeTypes.map((type) => <PokeTypeBadge key={type} type={type} />)}
         </div>

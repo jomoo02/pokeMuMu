@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import type { Poke } from '@/app/models/poke.type';
+import type { Poke } from '@/app/models/pokev4.type';
 import InformationBasic from './basic';
 import InformationBreeding from './breeding';
 import InformationDetail from './detail';
@@ -24,13 +24,13 @@ export default function Information({
       <div className={`border-2 border-t-0 ${type}-border  grid xl:grid-cols-3 items-center`}>
         <div>
           <div className="flex justify-center items-center py-3 md:py-0">
-            <Image
+            {/* <Image
               src={src}
               alt={poke.name.ko}
               width={200}
               height={200}
               priority
-            />
+            /> */}
           </div>
         </div>
         <div className="xl:col-span-2 xl:py-4">

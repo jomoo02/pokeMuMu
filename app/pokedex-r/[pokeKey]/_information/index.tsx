@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import type { Poke } from '@/app/models/poke.type';
+import type { Poke } from '@/app/models/pokev4.type';
 import Information from './components/information';
 import PokeStats from '../_stats';
 import PokeDefenseCompatibility from '../_defense-compatibility';
 import PokeAbilities from '../_abilities';
+import PokeMoves from '../_moves';
 
 interface PokeInformationListProps {
   pokeList: Poke[];
@@ -23,12 +24,12 @@ export default function PokeInformationList({
       <div className="flex gap-x-1 py-1">
         {pokeList.map((poke) => (
           <button
-            key={poke.name.ko}
+            key={poke.label}
             type="button"
             className="bg-blue-200 rounded-lg text-lg font-semibold px-2 py-1"
             onClick={() => handlePokeClick(poke)}
           >
-            {poke.name.ko}
+            {poke.label}
           </button>
         ))}
       </div>
@@ -36,6 +37,7 @@ export default function PokeInformationList({
       <PokeAbilities abilities={targetPoke.abilities} type={targetPoke.types[0]} />
       <PokeStats stats={targetPoke.stats} type={targetPoke.types[0]} />
       <PokeDefenseCompatibility types={targetPoke.types} />
+      <PokeMoves moves={targetPoke.moves} type={targetPoke.types[0]} />
     </div>
   );
 }

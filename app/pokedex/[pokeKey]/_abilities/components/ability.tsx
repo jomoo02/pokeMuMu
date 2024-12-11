@@ -1,19 +1,16 @@
 import React from 'react';
-import type { Ability } from '@/app/models/poke.type';
 
 interface PokeAbilityProps {
-  ability: Ability;
+  isHidden: boolean;
+  name: string;
+  flavorText: string;
 }
 
 export default function PokeAbility({
-  ability,
+  isHidden,
+  name,
+  flavorText,
 }: PokeAbilityProps) {
-  const {
-    isHidden,
-    name,
-    flavorText,
-  } = ability;
-
   return (
     <div className={`grid grid-cols-10 gap-x-1 min-h-12 ${isHidden ? 'bg-slate-100' : 'bg-white'}`}>
       <h3

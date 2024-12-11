@@ -52,6 +52,7 @@ export type Poke = {
   id: number;
   stats: StatItem[];
   pokedexNumbers: PokedexNumber[];
+  order2: number;
 };
 
 export type CardPoke = {

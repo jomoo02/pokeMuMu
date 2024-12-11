@@ -1,6 +1,6 @@
 import dbConnect from '@/app/_lib/dbConnect';
-import PokeV3Model from '@/app/models/Poke';
-import type { Poke } from '@/app/models/poke.type';
+import PokeV4Model from '@/app/models/PokeV4';
+import type { Poke, NavPoke } from '@/app/models/pokev4.type';
 
 export async function fetchPokeWithPokeKey(pokeKey: string) {
   try {
@@ -9,7 +9,7 @@ export async function fetchPokeWithPokeKey(pokeKey: string) {
     const query = { pokeKey };
     const projection = { _id: 0 };
 
-    const pokeList = await PokeV3Model
+    const pokeList = await PokeV4Model
       .find(query, projection)
       .sort({ order: 1 })
       .lean<Poke[]>();
@@ -21,31 +21,39 @@ export async function fetchPokeWithPokeKey(pokeKey: string) {
   }
 }
 
-export async function fetchSurroundingPoke(pokeKey: string, order: number) {
+export async function fetchSurroundingPoke(pokeKey: string) {
   try {
     await dbConnect();
+    const query = { pokeKey };
+    const projection = { no: 1 };
 
-    const projection = { _id: 0 };
+    const poke = await PokeV4Model
+      .findOne(query, projection)
+      .lean<Poke>();
 
-    const beforeQuery = { order: { $lt: order }, pokeKey: { $ne: pokeKey } };
+    if (!poke) {
+      return {
+        before: null,
+        next: null,
+      };
+    }
 
-    const beforetOptions = { sort: { order: -1 } };
+    const { no } = poke;
 
-    const nextQuery = { order: { $gt: order }, pokeKey: { $ne: pokeKey } };
+    const projection2 = {
+      speciesName: 1,
+      no: 1,
+      pokeKey: 1,
+      _id: 0,
+    };
 
-    const nextOptions = { sort: { order: 1 } };
+    const beforePoke = await PokeV4Model
+      .findOne({ no: no - 1 }, projection2)
+      .lean<NavPoke>();
 
-    const beforePoke = await PokeV3Model.findOne(
-      beforeQuery,
-      projection,
-      beforetOptions,
-    ).lean<Poke>();
-
-    const nextPoke = await PokeV3Model.findOne(
-      nextQuery,
-      projection,
-      nextOptions,
-    ).lean<Poke>();
+    const nextPoke = await PokeV4Model
+      .findOne({ no: no + 1 }, projection2)
+      .lean<NavPoke>();
 
     return {
       before: beforePoke || null,

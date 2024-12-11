@@ -1,13 +1,9 @@
 import React from 'react';
-import PokeInformationList from './_information';
 import {
   getPokeList,
-  getPokeDetail,
-  getPokeEvolution,
-  getPokeSurrounding,
+  getSurroundingPoke,
 } from './lib/get-poke';
-import PokeMoves from './_moves';
-import PokeEvolution from './_evolution';
+import PokeList from './components/poke-list';
 import PokeNavigation from './_navigation';
 
 interface PageProps {
@@ -23,33 +19,21 @@ export default async function Page({
 
   const [
     pokeList,
-    pokeDetail,
-    pokeEvolution,
+    surroundingPoke,
   ] = await Promise.all([
     getPokeList(pokeKey),
-    getPokeDetail(pokeKey),
-    getPokeEvolution(pokeKey),
+    getSurroundingPoke(pokeKey),
   ]);
 
-  const orderList = pokeList.map(({ order }) => order).sort((a, b) => a - b);
-
-  const { before, next } = await getPokeSurrounding(
-    pokeKey,
-    orderList[0],
-  );
-
-  const type = pokeList[0].types[0];
+  const {
+    before,
+    next,
+  } = surroundingPoke;
 
   return (
     <div>
-      <PokeNavigation before={before} next={next} type={type} />
-      <PokeInformationList pokeList={pokeList} />
-      {pokeEvolution && (
-        <PokeEvolution type={type} evolution={pokeEvolution} />
-      )}
-      {pokeDetail && (
-        <PokeMoves moves={pokeDetail?.moves} type={type} />
-      )}
+      <PokeNavigation before={before} next={next} />
+      <PokeList pokeList={pokeList} />
     </div>
   );
 }

@@ -1,7 +1,18 @@
-export function setFormText(form: string) {
-  if (form === '기본 모습') {
-    return '';
-  }
+import type { NavPoke } from '@/app/models/pokev4.type';
+import { formatPokedexNumber } from '@/app/utils/pokedex-number';
 
-  return `(${form})`;
+function formatNavButtonInfo(navPoke: NavPoke) {
+  const {
+    no,
+    speciesName,
+  } = navPoke;
+
+  return {
+    no: formatPokedexNumber(no),
+    name: speciesName.ko,
+  };
 }
+
+export {
+  formatNavButtonInfo,
+};
