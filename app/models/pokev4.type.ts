@@ -6,6 +6,11 @@ import type { Stat } from '../data/stat';
 import type { EggGroup } from '../data/egg-group';
 import type { GrowthRate } from '../data/growth-rate';
 
+type LocalizedName = {
+  en: string;
+  ko: string;
+};
+
 export type PokedexNumber = {
   pokedex: Pokedex;
   entryNumber: number;
@@ -34,7 +39,7 @@ export type Detail = {
   weight: number;
   captureRate: number;
   growthRate: GrowthRate;
-  effortStats: [];
+  effortStats: StatItem[];
 };
 
 export type MachineType = 'tm' | 'hm' | 'tr';
@@ -69,7 +74,7 @@ export type MoveMethod =
   | 'tr';
 
 export type VersionMove = {
-  [K in MoveMethod]: Move[] | [];
+  [K in MoveMethod]: Move[];
 };
 
 export type GenMoves = {
@@ -83,10 +88,7 @@ export type Moves = {
 }[];
 
 export type NavPoke = {
-  speciesName: {
-    en: string;
-    ko: string;
-  };
+  speciesName: LocalizedName;
   pokeKey: string;
   no: number;
 };
@@ -97,10 +99,7 @@ export type PokedexPoke = NavPoke & {
   form: string;
   order: number;
   stats: StatItem[];
-  name: {
-    en: string;
-    ko: string;
-  };
+  name: LocalizedName;
 };
 
 export type Poke = PokedexPoke & {
@@ -110,10 +109,7 @@ export type Poke = PokedexPoke & {
   id: number;
   pokedexNumbers: PokedexNumber[];
   forms: {
-    name: {
-      en: string;
-      ko: string;
-    };
+    name: LocalizedName;
     id: string;
   }[];
   moves: Moves;

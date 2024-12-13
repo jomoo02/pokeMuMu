@@ -9,9 +9,12 @@ import usePokeList from '../hooks/usePokeList';
 
 interface PokeListProps {
   pokeList: Poke[];
+  children?: React.ReactNode;
 }
+
 export default function PokeList({
   pokeList,
+  children,
 }: PokeListProps) {
   const {
     targetPoke,
@@ -23,6 +26,7 @@ export default function PokeList({
       <PokeAbilities abilities={targetPoke.abilities} />
       <PokeStats stats={targetPoke.stats} />
       <PokeDefenseCompatibility types={targetPoke.types} />
+      {children}
     </div>
   );
 }

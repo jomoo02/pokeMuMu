@@ -2,9 +2,11 @@ import React from 'react';
 import {
   getPokeList,
   getSurroundingPoke,
+  getEvolution,
 } from './lib/get-poke';
 import PokeList from './components/poke-list';
 import PokeNavigation from './_navigation';
+import PokeEvolution from './_evolution';
 
 interface PageProps {
   params: {
@@ -20,9 +22,11 @@ export default async function Page({
   const [
     pokeList,
     surroundingPoke,
+    pokeEvolution,
   ] = await Promise.all([
     getPokeList(pokeKey),
     getSurroundingPoke(pokeKey),
+    getEvolution(pokeKey),
   ]);
 
   const {
@@ -33,7 +37,9 @@ export default async function Page({
   return (
     <div>
       <PokeNavigation before={before} next={next} />
-      <PokeList pokeList={pokeList} />
+      <PokeList pokeList={pokeList}>
+        <PokeEvolution evolution={pokeEvolution} />
+      </PokeList>
     </div>
   );
 }
