@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Move } from '@/app/models/detail.type';
+import type { Move } from '@/app/models/pokev4.type';
 
 interface CellMachineProps {
   move: Move;

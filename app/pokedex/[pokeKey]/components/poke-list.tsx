@@ -6,6 +6,7 @@ import PokeAbilities from '../_abilities';
 import PokeStats from '../_stats';
 import PokeDefenseCompatibility from '../_defense-compatibility';
 import usePokeList from '../hooks/usePokeList';
+import PokeMoves from '../_moves';
 
 interface PokeListProps {
   pokeList: Poke[];
@@ -27,6 +28,7 @@ export default function PokeList({
       <PokeStats stats={targetPoke.stats} />
       <PokeDefenseCompatibility types={targetPoke.types} />
       {children}
+      <PokeMoves moves={targetPoke.moves} />
     </div>
   );
 }
