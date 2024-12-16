@@ -5,10 +5,12 @@ import Header from '../components/header';
 
 interface PokeMovesProps {
   moves: Moves;
+  order: number;
 }
 
 export default function PokeMoves({
   moves,
+  order,
 }: PokeMovesProps) {
   if (!moves) {
     return null;
@@ -20,7 +22,7 @@ export default function PokeMoves({
         text="기술"
       />
       <div className="border-2 border-t-0 rounded-b-sm">
-        <MoveList moves={moves} />
+        <MoveList moves={moves} key={order} />
       </div>
     </div>
   );

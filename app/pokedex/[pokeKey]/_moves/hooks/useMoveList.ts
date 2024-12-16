@@ -1,6 +1,5 @@
 import {
   useState,
-  useMemo,
 } from 'react';
 import type { Moves } from '@/app/models/detail.type';
 
@@ -11,9 +10,7 @@ export default function useMoveList(moves: Moves) {
 
   const [targetGen, setTargetGen] = useState(initialTargetGen);
 
-  const targetGenMoveList = useMemo(() => (
-    moves.find(({ gen }) => gen === targetGen)!.genMoves
-  ), [targetGen]);
+  const targetGenMoveList = moves.find(({ gen }) => gen === targetGen)?.genMoves || [];
 
   const handleTargetGen = (gen: number) => {
     if (gen >= 1 && gen <= 9) {

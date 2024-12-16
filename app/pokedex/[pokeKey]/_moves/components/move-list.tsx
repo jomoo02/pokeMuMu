@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import type { Moves } from '@/app/models/pokev4.type';
 import useMoveList from '../hooks/useMoveList';
