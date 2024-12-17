@@ -9,6 +9,7 @@ import PokeDefenseCompatibility from '../_defense-compatibility';
 import usePokeList from '../hooks/usePokeList';
 import PokeMoves from '../_moves';
 import PokeInformation from '../_information';
+import PokeIdentifier from './poke-identifier';
 
 interface PokeListProps {
   pokeList: Poke[];
@@ -26,6 +27,10 @@ export default function PokeList({
 
   return (
     <div>
+      <PokeIdentifier
+        name={pokeList[0].name}
+        no={pokeList[0].no}
+      />
       <PokeListGroup
         pokeList={pokeList}
         targetPoke={targetPoke}

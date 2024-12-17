@@ -17,10 +17,10 @@ function Before({
   return (
     <Link
       href={`/pokedex/${pokeKey}`}
-      className="flex border-2 rounded-lg items-center h-14 md:h-16"
+      className="flex border-2 rounded-lg items-center h-14 md:h-16 border-slate-500"
       prefetch
     >
-      <div className="flex justify-center items-center h-full border-r px-4">
+      <div className="flex justify-center items-center h-full border-r px-4 border-slate-500">
         <ArrowLeftIcon />
       </div>
       <div className="flex-1">
@@ -38,10 +38,10 @@ function Next({
   return (
     <Link
       href={`/pokedex/${pokeKey}`}
-      className="flex flex-row-reverse border-2 rounded-lg items-center h-14 md:h-16"
+      className="flex flex-row-reverse border-2 rounded-lg items-center h-14 md:h-16 border-slate-500"
       prefetch
     >
-      <div className="flex justify-center items-center h-full border-l px-4">
+      <div className="flex justify-center items-center h-full border-l px-4 border-slate-500">
         <ArrowRightIcon />
       </div>
       <div className="flex-1">
