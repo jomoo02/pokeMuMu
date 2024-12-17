@@ -26,7 +26,11 @@ export default function PokeList({
 
   return (
     <div>
-      <PokeListGroup pokeList={pokeList} onClickPoke={handleTargetPoke} />
+      <PokeListGroup
+        pokeList={pokeList}
+        targetPoke={targetPoke}
+        onClickPoke={handleTargetPoke}
+      />
       <PokeInformation poke={targetPoke} />
       <PokeAbilities abilities={targetPoke.abilities} />
       <PokeStats stats={targetPoke.stats} />
