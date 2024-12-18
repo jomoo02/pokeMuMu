@@ -27,7 +27,7 @@ export default function PokeListGroup({
           return (
             <div
               key={poke.order}
-              className="px-3 py-1.5 rounded-lg font-semibold text-[15px] bg-slate-700 text-white"
+              className="px-3 py-1 rounded-lg font-semibold text-[15px] bg-slate-700 text-white border-2 border-slate-700"
             >
               {poke.label}
             </div>
@@ -38,7 +38,7 @@ export default function PokeListGroup({
             key={poke.order}
             type="button"
             onClick={() => handlePokeClick(poke)}
-            className="px-3 py-1.5 rounded-lg font-semibold text-[15px] bg-slate-200 hover:bg-slate-300"
+            className="px-3 py-1 rounded-lg font-semibold text-[15px] bg-white border-2 border-slate-500 hover:bg-[#e2e8f0]"
           >
             {poke.label}
           </button>

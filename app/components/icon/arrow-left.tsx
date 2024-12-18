@@ -8,7 +8,7 @@ interface ArrowLeftIconProps {
 
 export default function ArrowLeftIcon({
   size = '1rem',
-  color = '#64748b',
+  color = '#334155',
 }: ArrowLeftIconProps) {
   return <IconArrowBigLeftFilled size={size} color={color} />;
 }

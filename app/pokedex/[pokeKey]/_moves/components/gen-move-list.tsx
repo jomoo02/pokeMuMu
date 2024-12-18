@@ -20,14 +20,14 @@ export default function GenMoveList({
 
   return (
     <>
-      <div className="px-1 sm:px-2 lg:px-7 border-b-2 pt-3">
+      <div className="px-1 sm:px-2 lg:px-7 border-b-2 pt-3 border-slate-500">
         <ButtonGroup.Version
           versions={genVersionList}
           targetVersion={targetGenVersion}
           setTargetVersion={handleTargetVersion}
         />
       </div>
-      <div className="px-1 xs:px-2 md:px-3 py-3 2xl:px-10">
+      <div className="px-1 xs:px-2 md:px-3 xl:px-7 pb-2">
         <VersionMoveList
           key={targetGenVersion}
           versionMoveList={genVersionMoveList}

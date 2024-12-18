@@ -15,16 +15,14 @@ export default function NavButtonInfo({
   } = formatNavButtonInfo(poke);
 
   return (
-    <div className="flex justify-center gap-x-3">
-      <div className="flex flex-col justify-center items-center text-sm py-1 font-semibold">
-        <div className="flex gap-x-1.5 items-center">
-          <span className="capitalize text-slate-500 text-sm">
-            {`#${no}`}
-          </span>
-          <span className="text-center text-slate-600/90 text-[15px]">
-            {name}
-          </span>
-        </div>
+    <div className="flex gap-x-3 items-center">
+      <div className="flex gap-x-1.5 justify-center font-semibold text-slate-800 text-sm lg:text-[15px]">
+        <span className="text-slate-700">
+          {`#${no}`}
+        </span>
+        <span className="text-center">
+          {name}
+        </span>
       </div>
     </div>
   );

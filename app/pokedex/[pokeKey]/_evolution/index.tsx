@@ -24,7 +24,7 @@ export default function PokeEvolution({
       <Header
         text="진화"
       />
-      <div className="border-2 border-t-0 rounded-b-sm">
+      <div className="border-2 border-slate-500 rounded-lg bg-white">
         <PokeChain evolution={evolution} />
         <Area id={id} />
       </div>

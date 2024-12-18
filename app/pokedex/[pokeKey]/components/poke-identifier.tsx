@@ -16,11 +16,11 @@ export default function PokeIdentifier({
   const formattedNo = formatPokedexNumber(no);
 
   return (
-    <h1 className="text-2xl text-slate-700 flex gap-x-1.5 justify-center">
-      <span className="font-medium">
+    <h1 className="text-2xl lg:text-3xl text-slate-700 flex gap-x-1.5 justify-center my-3">
+      <span className="font-semibold">
         {formattedNo}
       </span>
-      <span className="font-bold">
+      <span className="font-extrabold">
         {localeName}
       </span>
     </h1>

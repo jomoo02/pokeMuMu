@@ -20,7 +20,7 @@ export default function MoveList({
 
   return (
     <>
-      <div className="flex gap-x-1.5 items-center px-2.5 lg:px-8 py-2.5 border-b-2">
+      <div className="flex gap-x-1.5 items-center px-2.5 lg:px-8 py-2.5 border-b-2 border-slate-500">
         <ButtonGroup.Gen
           gens={genList}
           targetGen={targetGen}

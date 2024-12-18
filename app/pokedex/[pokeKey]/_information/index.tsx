@@ -4,7 +4,6 @@ import type { Poke } from '@/app/models/pokev4.type';
 import InformationBasic from './components/basic';
 import InformationBreeding from './components/breeding';
 import InformationDetail from './components/detail';
-import Header from '../components/header';
 
 interface PokeInformationProps {
   poke: Poke;
@@ -18,8 +17,7 @@ export default function PokeInformation({
 
   return (
     <div>
-      <Header text="정보" />
-      <div className="border-2 border-t-0 grid xl:grid-cols-3 items-center">
+      <div className="border-slate-500 border-2 rounded-lg grid xl:grid-cols-3 items-center bg-white">
         <div>
           <div className="flex justify-center items-center py-3 md:py-0">
             <Image

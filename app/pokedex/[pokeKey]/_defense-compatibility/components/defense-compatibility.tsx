@@ -14,8 +14,8 @@ export default function DefenseCompatibility({
   const targetDfCompatibility = formatDefenseCompatibility(pokeTypes);
 
   return (
-    <div className="border-2 border-t-0 rounded-b-sm">
-      <div className="flex py-1 md:py-1.5 justify-center items-center gap-x-2.5 border-b-2">
+    <>
+      <div className="flex py-1 md:py-1.5 justify-center items-center gap-x-2.5 border-b border-slate-400">
         <div className="flex gap-x-2">
           {pokeTypes.map((type) => <PokeTypeBadge key={type} type={type} />)}
         </div>
@@ -24,7 +24,7 @@ export default function DefenseCompatibility({
         {targetDfCompatibility.map(({ damageRate, types }) => (
           <div
             key={damageRate}
-            className={`flex gap-x-2 md:flex-col border-b last:border-b-0 md:border-b-0 py-1.5 md:py-0 md:border-r ${types.length > 4 ? 'flex-auto' : ''}`}
+            className={`flex gap-x-2 md:flex-col border-b md:border-b-0 py-1.5 md:py-0 md:border-r border-slate-400 last:border-0 ${types.length > 4 ? 'flex-auto' : ''}`}
           >
             <DamageRate
               damageRate={damageRate}
@@ -33,6 +33,6 @@ export default function DefenseCompatibility({
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }

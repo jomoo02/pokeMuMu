@@ -12,9 +12,9 @@ export default function PokeAbility({
   flavorText,
 }: PokeAbilityProps) {
   return (
-    <div className={`grid grid-cols-10 gap-x-1 min-h-12 font-medium ${isHidden ? 'bg-slate-100' : 'bg-white'}`}>
-      <h3
-        className="col-span-3 xl:col-span-2 border-r py-0.5 px-1 text-sm md:text-[15px] flex flex-col items-center justify-center"
+    <div className={`first:rounded-t-xl last:rounded-b-lg grid grid-cols-10 gap-x-1 min-h-12 font-medium ${isHidden ? 'bg-blue-50' : 'bg-white'}`}>
+      <div
+        className="col-span-3 xl:col-span-2 border-r border-slate-400 py-0.5 px-1 text-sm lg:text-base flex flex-col items-center justify-center"
       >
         {name}
         {isHidden && (
@@ -22,7 +22,7 @@ export default function PokeAbility({
             (숨겨진 특성)
           </span>
         )}
-      </h3>
+      </div>
       <p className="col-span-7 text-pretty text-sm md:text-[15px] p-2 md:px-3 flex items-center">
         {flavorText}
       </p>

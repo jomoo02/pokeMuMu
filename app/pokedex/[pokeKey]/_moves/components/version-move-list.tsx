@@ -27,7 +27,7 @@ export default function VersionMoveList({
   } = categorizeVersionMove(versionMoveList);
 
   return (
-    <div className="grid xl:grid-cols-2 xl:py-3 xl:px-2">
+    <div className="grid xl:grid-cols-2">
       <div className="overflow-x-hidden">
         {methodMoveLst.map(({ method, moveList }) => (
           <MethodMoveTable

@@ -52,7 +52,7 @@ function GenGroup({
         return (
           <Button
             key={gen}
-            className={`flex items-center justify-center rounded-md px-2 py-1 h-7 min-w-10 md:min-w-11 md:max-w-11 ${isActive ? 'text-black' : 'bg-slate-200 hover:bg-slate-400/70'}`}
+            className={`flex border-2 border-slate-500 items-center justify-center rounded-md px-2 py-1 h-[30px] min-w-10 md:min-w-11 md:max-w-11 ${isActive ? 'text-white bg-slate-700 border-slate-700' : 'bg-white hover:bg-[#e2e8f0]'}`}
             onClickButton={() => handleClickButon(gen)}
             isActive={isActive}
           >
@@ -93,7 +93,7 @@ function VersionGroup({
             key={version}
             isActive={isActive}
             onClickButton={() => handleClickVersion(version)}
-            className={`font-medium rounded-t-lg py-1 px-1 lg:px-3.5 text-sm md:text-base text-balance ${isActive ? 'text-center flex items-center justify-center' : 'bg-slate-200 hover:bg-slate-400/70'}`}
+            className={`border-2 border-slate-500 border-b-0 font-semibold rounded-t-lg py-1 px-1 lg:px-3.5 text-sm md:text-base text-balance ${isActive ? 'bg-slate-700 border-slate-700 text-white text-center flex items-center justify-center' : 'bg-white hover:bg-[#e2e8f0]'}`}
           >
             {localeVersion}
           </Button>

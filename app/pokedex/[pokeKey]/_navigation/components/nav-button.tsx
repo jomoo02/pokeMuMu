@@ -13,17 +13,16 @@ function Before({
   poke,
 }: NavButtonProps) {
   const { pokeKey } = poke;
-
   return (
     <Link
       href={`/pokedex/${pokeKey}`}
-      className="flex border-2 rounded-lg items-center h-14 md:h-16 border-slate-500"
+      className="flex border-2 rounded-lg h-[52px] md:h-14 lg:h-16 border-slate-500 bg-white hover:bg-slate-100"
       prefetch
     >
-      <div className="flex justify-center items-center h-full border-r px-4 border-slate-500">
+      <div className="flex justify-center items-center border-r-2 border-slate-500 px-3 sm:px-4">
         <ArrowLeftIcon />
       </div>
-      <div className="flex-1">
+      <div className="flex-1 flex justify-center items-center">
         <NavButtonInfo poke={poke} />
       </div>
     </Link>
@@ -38,13 +37,13 @@ function Next({
   return (
     <Link
       href={`/pokedex/${pokeKey}`}
-      className="flex flex-row-reverse border-2 rounded-lg items-center h-14 md:h-16 border-slate-500"
+      className="flex flex-row-reverse border-2 rounded-lg h-[52px] md:h-14 lg:h-16 border-slate-500 bg-white hover:bg-slate-100"
       prefetch
     >
-      <div className="flex justify-center items-center h-full border-l px-4 border-slate-500">
+      <div className="flex justify-center items-center border-l-2 border-slate-500 px-3 sm:px-4">
         <ArrowRightIcon />
       </div>
-      <div className="flex-1">
+      <div className="flex-1 flex justify-center items-center">
         <NavButtonInfo poke={poke} />
       </div>
     </Link>

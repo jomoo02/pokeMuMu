@@ -16,8 +16,8 @@ export default function PokeStats({
 
   return (
     <div>
-      <Header text="스탯" />
-      <div className="grid border-2 border-t-0 divide-y rounded-b-sm">
+      <Header text="능력치" />
+      <div className="grid border-2 border-slate-500 divide-y divide-slate-400 rounded-lg bg-white">
         {stats.map((statItem) => (
           <BasicStat
             key={statItem.stat}

@@ -15,7 +15,9 @@ export default function PokeDefenseCompatibility({
       <Header
         text="방어 상성"
       />
-      <DefenseCompatibility pokeTypes={types} />
+      <div className="bg-white border-2 border-slate-500 rounded-lg">
+        <DefenseCompatibility pokeTypes={types} />
+      </div>
     </div>
   );
 }

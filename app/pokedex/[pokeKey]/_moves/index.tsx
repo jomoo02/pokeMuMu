@@ -21,7 +21,7 @@ export default function PokeMoves({
       <Header
         text="기술"
       />
-      <div className="border-2 border-t-0 rounded-b-sm">
+      <div className="border-2 border-slate-500 bg-white rounded-lg">
         <MoveList moves={moves} key={order} />
       </div>
     </div>

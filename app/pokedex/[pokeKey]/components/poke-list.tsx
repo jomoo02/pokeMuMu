@@ -26,17 +26,19 @@ export default function PokeList({
   } = usePokeList(pokeList);
 
   return (
-    <div>
+    <div className="grid gap-y-6 md:gap-y-10">
       <PokeIdentifier
         name={pokeList[0].name}
         no={pokeList[0].no}
       />
-      <PokeListGroup
-        pokeList={pokeList}
-        targetPoke={targetPoke}
-        onClickPoke={handleTargetPoke}
-      />
-      <PokeInformation poke={targetPoke} />
+      <div className="grid gap-y-3">
+        <PokeListGroup
+          pokeList={pokeList}
+          targetPoke={targetPoke}
+          onClickPoke={handleTargetPoke}
+        />
+        <PokeInformation poke={targetPoke} />
+      </div>
       <PokeAbilities abilities={targetPoke.abilities} />
       <PokeStats stats={targetPoke.stats} />
       <PokeDefenseCompatibility types={targetPoke.types} />

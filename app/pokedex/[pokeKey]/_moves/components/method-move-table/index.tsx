@@ -33,10 +33,10 @@ export default function MethodMoveTable({
   const tableHeadItemList = getTableHeadItemList(moveMethod);
 
   return (
-    <div className="py-0.5 my-4 sm:my-3 lg:my-4 overflow-x-hidden">
+    <div className="py-0.5 my-4 sm:my-3 lg:my-4 lg:mb-10 overflow-x-hidden">
       <TableTitle moveMethod={moveMethod} />
       <div className="overflow-auto">
-        <table className="border border-slate-300  table-fixed ">
+        <table className="border border-slate-300 table-fixed">
           <TableHead
             headItemList={tableHeadItemList}
             targetCellKey={targetCellKey}

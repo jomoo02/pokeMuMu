@@ -35,7 +35,7 @@ export default async function Page({
   } = surroundingPoke;
 
   return (
-    <div>
+    <div className="grid gap-y-6 md:gap-y-10">
       <PokeNavigation before={before} next={next} />
       <PokeList pokeList={pokeList}>
         <PokeEvolution evolution={pokeEvolution} />
