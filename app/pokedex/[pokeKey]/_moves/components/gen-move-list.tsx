@@ -20,7 +20,7 @@ export default function GenMoveList({
 
   return (
     <>
-      <div className="px-1 sm:px-2 lg:px-7 border-b-2 pt-3 border-slate-500">
+      <div className="px-1 sm:px-2 lg:px-7 border-b-2 sm:pt-3 border-slate-500">
         <ButtonGroup.Version
           versions={genVersionList}
           targetVersion={targetGenVersion}

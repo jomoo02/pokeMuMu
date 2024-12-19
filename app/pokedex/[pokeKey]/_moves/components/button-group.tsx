@@ -50,7 +50,7 @@ function GenGroup({
   return (
     <div
       ref={scrollContainerRef}
-      className="flex gap-x-3 gap-y-2 items-center py-1 overflow-auto scroll-smooth"
+      className="flex gap-x-3 gap-y-2 items-center py-2 overflow-auto scroll-smooth"
     >
       {gens.map((gen) => {
         const isActive = gen === targetGen;
@@ -91,7 +91,7 @@ function VersionGroup({
   const handleClickVersion = (version: Version) => setTargetVersion(version);
 
   return (
-    <div className="flex gap-x-2 gap-y-1 lg:gap-x-1.5 overflow-auto">
+    <div className="flex gap-x-2 gap-y-1 lg:gap-x-1.5 overflow-auto py-2.5 sm:py-0">
       {versions.map(({ version, localeVersion }) => {
         const isActive = version === targetVersion;
 
@@ -100,7 +100,7 @@ function VersionGroup({
             key={version}
             isActive={isActive}
             onClickButton={() => handleClickVersion(version)}
-            className={`border-2 text-nowrap border-slate-500 border-b-0 font-semibold rounded-t-lg py-1 px-2 lg:px-3.5 text-sm md:text-base ${isActive ? 'bg-slate-700 border-slate-700 text-white text-center flex items-center justify-center' : 'bg-white hover:bg-[#e2e8f0]'}`}
+            className={`border-2 text-nowrap border-slate-500 sm:border-b-0 font-semibold rounded-md sm:rounded-lg sm:rounded-b-none py-1 px-2 lg:px-3.5 text-sm md:text-base ${isActive ? 'bg-slate-700 border-slate-700 text-white text-center flex items-center justify-center' : 'bg-white hover:bg-[#e2e8f0]'}`}
           >
             {localeVersion}
           </Button>

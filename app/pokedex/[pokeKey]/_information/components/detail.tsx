@@ -34,14 +34,14 @@ function InforamtionDetailGrowthRate({
     <div className="grid gap-y-1">
       <div>{growthRateText}</div>
       <div>
-        <span className="text-slate-500/90 text-xs lg:text-sm">
+        <span className="text-slate-500 text-xs lg:text-sm">
           {atLevel50Text}
         </span>
         {' : '}
         {expPointAt50}
       </div>
       <div>
-        <span className="text-slate-500/90 text-xs lg:text-sm">
+        <span className="text-slate-500 text-xs lg:text-sm">
           {atLevel100Text}
         </span>
         {' : '}

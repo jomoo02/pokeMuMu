@@ -47,7 +47,7 @@ export default function TableRow({
   return (
     <tr className="h-9">
       <FirstCell moveMethod={moveMethod} move={move} />
-      <td className="px-1.5 border border-slate-400 text-nowrap">
+      <td className="px-1.5 border border-slate-400 text-nowrap font-semibold">
         {name}
       </td>
       <td align="center" className="border border-slate-400">

@@ -12,7 +12,7 @@ export default function PokeAbility({
   flavorText,
 }: PokeAbilityProps) {
   return (
-    <div className={`first:rounded-t-xl last:rounded-b-lg grid grid-cols-10 gap-x-1 min-h-12 ${isHidden ? 'bg-blue-50' : 'bg-white'}`}>
+    <div className={`first:rounded-t-xl last:rounded-b-lg grid grid-cols-10 min-h-12 ${isHidden ? 'bg-blue-50' : 'bg-white'}`}>
       <div
         className="col-span-3 xl:col-span-2 border-r border-slate-400 py-0.5 px-1 flex flex-col items-center justify-center"
       >

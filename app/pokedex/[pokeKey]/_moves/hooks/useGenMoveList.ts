@@ -5,25 +5,17 @@ import {
 } from '@/app/data/version';
 import type { GenMoves } from '@/app/models/detail.type';
 
-function setInitialTargetGenVersion(genMoveList: GenMoves) {
-  const targetGenVersion = genMoveList.find(({ versionMoves }) => (
+export default function useGenMoveList(genMoveList: GenMoves) {
+  const filterdGenMoveList = genMoveList.filter(({ versionMoves }) => (
     Object.values(versionMoves).some((moveList) => moveList.length > 0)
   ));
 
-  if (!targetGenVersion) {
-    throw new Error('Target version moves not found');
-  }
-
-  return targetGenVersion.version;
-}
-
-export default function useGenMoveList(genMoveList: GenMoves) {
-  const genVersionList = genMoveList.map(({ version }) => ({
+  const genVersionList = filterdGenMoveList.map(({ version }) => ({
     version,
     localeVersion: VERSION_LIST[version],
   }));
 
-  const initialTargetGenVersion = setInitialTargetGenVersion(genMoveList);
+  const initialTargetGenVersion = filterdGenMoveList[0].version;
 
   const [targetGenVersion, setTargetGenVersion] = useState(initialTargetGenVersion);
 

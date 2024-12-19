@@ -12,9 +12,9 @@ interface PokeInformationProps {
 export default function PokeInformation({
   poke,
 }: PokeInformationProps) {
-  // const baseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
-  // const src = `${baseUrl}/${poke.id}.png`;
-  const src = '/pokeball.svg';
+  const baseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
+  const src = `${baseUrl}/${poke.id}.png`;
+  // const src = '/pokeball.svg';
 
   return (
     <div className="border-slate-500 border-2 rounded-lg grid xl:grid-cols-3 items-center bg-white">
