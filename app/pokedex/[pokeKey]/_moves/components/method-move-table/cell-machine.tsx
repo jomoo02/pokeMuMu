@@ -19,8 +19,8 @@ export default function CellMachine({
     : `0${machineNumber}`;
 
   return (
-    <>
+    <span>
       {formattedMachineNumber}
-    </>
+    </span>
   );
 }

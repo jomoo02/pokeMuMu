@@ -17,12 +17,10 @@ export function ItemLink({
   children,
 }: ItemLinkProps) {
   return (
-    <>
-      <span className="text-nowrap">
-        {item}
-        {children}
-      </span>
-    </>
+    <span className="text-nowrap">
+      {item}
+      {children}
+    </span>
   );
 }
 

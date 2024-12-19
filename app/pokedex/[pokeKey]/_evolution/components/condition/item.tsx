@@ -37,9 +37,7 @@ function UseItem({
   const item = EVOLUTION_ITEM_LIST[value];
 
   return (
-    <>
-      <ItemLink item={item} />
-    </>
+    <ItemLink item={item} />
   );
 }
 
