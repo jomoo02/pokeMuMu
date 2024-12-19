@@ -24,9 +24,11 @@ function Beauty({
 function Happiness({
   value,
 }: MinProps) {
-  const content = `친밀도가 높은 상태(${value})에서`;
+  if (value && typeof value === 'number' && value > 100) {
+    return <span>친밀도가 높은 상태에서</span>;
+  }
 
-  return <span>{content}</span>;
+  return null;
 }
 
 function Level({

@@ -24,7 +24,7 @@ export default function ChainPoke({
   return (
     <div className={`flex flex-col justify-center items-center ${maxWidth === 8 ? '' : 'md:flex-row'}`}>
       <ChainPokeDetail detail={detail} />
-      <div className="min-w-20 max-w-24 xs:w-24 md:w-24 flex flex-col items-center justify-center py-4">
+      <div className="min-w-20 max-w-24 xs:w-24 md:w-24 flex flex-col items-center justify-center">
         <div className="w-16 h-16 md:w-20 relative md:h-20">
           <Image
             src={src}

@@ -26,7 +26,7 @@ export default function PokeList({
   } = usePokeList(pokeList);
 
   return (
-    <div className="grid gap-y-6 md:gap-y-10">
+    <div className="flex flex-col gap-y-8 md:gap-y-16">
       <PokeIdentifier
         name={pokeList[0].name}
         no={pokeList[0].no}

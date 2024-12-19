@@ -15,12 +15,12 @@ type EffortStat = {
   value: number;
 };
 
-function formatMeasurement(value: number, unit: string) {
+function formatMeasurement(value: number) {
   const meters = value / 10;
 
   const formattedMeters = meters.toFixed(1);
 
-  return `${formattedMeters} ${unit}`;
+  return formattedMeters;
 }
 
 function getGrowthRateInfo(growthRate: GrowthRate = DEFAULT_GROWTH_RATE) {
@@ -35,7 +35,10 @@ function getGrowthRateInfo(growthRate: GrowthRate = DEFAULT_GROWTH_RATE) {
 }
 
 function transformEffortStats(effortStats: EffortStat[]) {
-  return effortStats.map(({ stat, value }) => `${STAT_LIST[stat]}: ${value}`);
+  return effortStats.map(({ stat, value }) => ({
+    value,
+    stat: STAT_LIST[stat],
+  }));
 }
 
 export {

@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${inter.className} ${pretendard.variable} antialiased`}>
-        <main className="px-4 py-6 min-h-svh max-w-screen-xl mx-auto">
+        <main className="py-6 min-h-svh px-4 xl:max-w-screen-xl mx-auto">
           {children}
         </main>
         <footer className="h-32" />

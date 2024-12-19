@@ -1,5 +1,6 @@
 import React from 'react';
 import { Version } from '@/app/data/version';
+import useGenButtonGroup from '../hooks/useGenButtonGroup';
 
 function Button({
   isActive,
@@ -44,25 +45,31 @@ function GenGroup({
 }) {
   const handleClickButon = (gen: number) => setTargetGen(gen);
 
+  const { scrollContainerRef } = useGenButtonGroup();
+
   return (
-    <div className="flex gap-x-2 flex-wrap gap-y-2 items-center">
+    <div
+      ref={scrollContainerRef}
+      className="flex gap-x-3 gap-y-2 items-center py-1 overflow-auto scroll-smooth"
+    >
       {gens.map((gen) => {
         const isActive = gen === targetGen;
 
         return (
-          <Button
-            key={gen}
-            className={`flex border-2 border-slate-500 items-center justify-center rounded-md px-2 py-1 h-[30px] min-w-10 md:min-w-11 md:max-w-11 ${isActive ? 'text-white bg-slate-700 border-slate-700' : 'bg-white hover:bg-[#e2e8f0]'}`}
-            onClickButton={() => handleClickButon(gen)}
-            isActive={isActive}
-          >
-            <span className="text-sm md:text-base font-medium text-slate-80">
-              {gen}
-            </span>
-            <span className="font-semibold text-[12px] leading-[24px]">
-              th
-            </span>
-          </Button>
+          <div key={gen} className="w-10 min-w-10">
+            <Button
+              className={`flex border-2 border-slate-500 items-center justify-center rounded-md px-2 py-1 h-[30px] w-10 min-w-10 flex-shrink-0 md:min-w-11 md:max-w-11 ${isActive ? 'text-white bg-slate-700 border-slate-700' : 'bg-white hover:bg-[#e2e8f0]'}`}
+              onClickButton={() => handleClickButon(gen)}
+              isActive={isActive}
+            >
+              <span className="font-semibold">
+                {gen}
+              </span>
+              <span className="text-[12px] font-semibold leading-[24px]">
+                th
+              </span>
+            </Button>
+          </div>
         );
       })}
     </div>
@@ -84,7 +91,7 @@ function VersionGroup({
   const handleClickVersion = (version: Version) => setTargetVersion(version);
 
   return (
-    <div className="grid grid-cols-2 lg:flex gap-x-1 gap-y-1 lg:gap-x-1.5">
+    <div className="flex gap-x-2 gap-y-1 lg:gap-x-1.5 overflow-auto">
       {versions.map(({ version, localeVersion }) => {
         const isActive = version === targetVersion;
 
@@ -93,7 +100,7 @@ function VersionGroup({
             key={version}
             isActive={isActive}
             onClickButton={() => handleClickVersion(version)}
-            className={`border-2 border-slate-500 border-b-0 font-semibold rounded-t-lg py-1 px-1 lg:px-3.5 text-sm md:text-base text-balance ${isActive ? 'bg-slate-700 border-slate-700 text-white text-center flex items-center justify-center' : 'bg-white hover:bg-[#e2e8f0]'}`}
+            className={`border-2 text-nowrap border-slate-500 border-b-0 font-semibold rounded-t-lg py-1 px-2 lg:px-3.5 text-sm md:text-base ${isActive ? 'bg-slate-700 border-slate-700 text-white text-center flex items-center justify-center' : 'bg-white hover:bg-[#e2e8f0]'}`}
           >
             {localeVersion}
           </Button>

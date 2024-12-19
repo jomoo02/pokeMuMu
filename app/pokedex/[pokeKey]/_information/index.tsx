@@ -12,30 +12,29 @@ interface PokeInformationProps {
 export default function PokeInformation({
   poke,
 }: PokeInformationProps) {
-  const baseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
-  const src = `${baseUrl}/${poke.id}.png`;
+  // const baseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork';
+  // const src = `${baseUrl}/${poke.id}.png`;
+  const src = '/pokeball.svg';
 
   return (
-    <div>
-      <div className="border-slate-500 border-2 rounded-lg grid xl:grid-cols-3 items-center bg-white">
-        <div>
-          <div className="flex justify-center items-center py-3 md:py-0">
-            <Image
-              src={src}
-              alt={poke.name.ko}
-              width={200}
-              height={200}
-              priority
-            />
-          </div>
+    <div className="border-slate-500 border-2 rounded-lg grid xl:grid-cols-3 items-center bg-white">
+      <div>
+        <div className="flex justify-center items-center py-3 sm:py-5 lg:py-6 xl:py-0">
+          <Image
+            src={src}
+            alt={poke.name.ko}
+            width={200}
+            height={200}
+            priority
+          />
         </div>
-        <div className="xl:col-span-2 xl:py-4">
-          <div className="px-2 2xl:px-10 pb-1 md:pb-4 grid xl:grid-cols-2 xl:gap-x-8 2xl:gap-x-14 gap-y-4 xl:min-h-[500px]">
-            <InformationBasic poke={poke} />
-            <div className="grid gap-y-4 gap-x-6 xl:gap-y-6">
-              <InformationDetail detail={poke.detail} />
-              <InformationBreeding breeding={poke.breeding} />
-            </div>
+      </div>
+      <div className="xl:col-span-2 xl:py-4">
+        <div className="px-2 2xl:px-10 pb-1 md:pb-4 grid xl:grid-cols-2 xl:gap-x-8 2xl:gap-x-14 gap-y-4 xl:min-h-[500px]">
+          <InformationBasic poke={poke} />
+          <div className="grid gap-y-4 gap-x-6 xl:gap-y-6">
+            <InformationDetail detail={poke.detail} />
+            <InformationBreeding breeding={poke.breeding} />
           </div>
         </div>
       </div>

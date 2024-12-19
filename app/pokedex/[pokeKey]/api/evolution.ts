@@ -20,21 +20,21 @@ export async function fetchPokeEvolution(pokeKey: string) {
   }
 }
 
-export async function fetchPokeEvolutionAll() {
-  try {
-    await dbConnect();
+// export async function fetchPokeEvolutionAll() {
+//   try {
+//     await dbConnect();
 
-    const query = { };
-    const projection = { _id: 0 };
+//     const query = { };
+//     const projection = { _id: 0 };
 
-    const evolution = await EvolutionModel
-      .find(query, projection)
-      .sort({ id: 1 })
-      .lean<Evolution[]>();
+//     const evolution = await EvolutionModel
+//       .find(query, projection)
+//       .sort({ id: 1 })
+//       .lean<Evolution[]>();
 
-    return evolution;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
+//     return evolution;
+//   } catch (error) {
+//     console.error(error);
+//     return null;
+//   }
+// }

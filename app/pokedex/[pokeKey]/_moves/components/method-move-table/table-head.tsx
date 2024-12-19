@@ -22,7 +22,7 @@ export default function TableHead({
 
   return (
     <thead>
-      <tr className="text-sm md:text-base font-medium text-nowrap">
+      <tr className="text-nowrap">
         {headItemList.map(({
           className,
           id,
@@ -30,7 +30,7 @@ export default function TableHead({
         }) => (
           <th
             key={id}
-            className={`${className} h-[2.4rem] border p-0 border-slate-300`}
+            className={`${className} font-bold h-[2.4rem] border p-0 border-slate-400`}
           >
             <button
               type="button"

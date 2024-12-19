@@ -31,21 +31,21 @@ function InforamtionDetailGrowthRate({
   const atLevel100Text = 'Lv.1 -> Lv.100';
 
   return (
-    <div className="text-slate-600 text-sm sm:text-[15px] font-semibold grid gap-y-1">
+    <div className="grid gap-y-1">
       <div>{growthRateText}</div>
-      <div className="flex gap-x-2 items-center">
-        <span className="text-slate-500/90 text-xs xs:text-[13px] sm:text-sm">
+      <div>
+        <span className="text-slate-500/90 text-xs lg:text-sm">
           {atLevel50Text}
         </span>
-        :
-        <span>{expPointAt50}</span>
+        {' : '}
+        {expPointAt50}
       </div>
-      <div className="flex gap-x-2 items-center">
-        <span className="text-slate-500/90 text-xs xs:text-[13px] sm:text-sm">
+      <div>
+        <span className="text-slate-500/90 text-xs lg:text-sm">
           {atLevel100Text}
         </span>
-        :
-        <span>{expPointAt100}</span>
+        {' : '}
+        {expPointAt100}
       </div>
     </div>
   );
@@ -54,9 +54,9 @@ function InforamtionDetailGrowthRate({
 export default function InformationDetail({
   detail,
 }: InformationDetailProps) {
-  const height = formatMeasurement(detail.height, 'm');
+  const height = formatMeasurement(detail.height);
 
-  const weight = formatMeasurement(detail.weight, 'kg');
+  const weight = formatMeasurement(detail.weight);
 
   const effortStats = transformEffortStats(detail.effortStats);
   return (
@@ -68,11 +68,11 @@ export default function InformationDetail({
       />
       <InfoItem
         subject="신장"
-        content={height}
+        content={`${height} m`}
       />
       <InfoItem
         subject="무게"
-        content={weight}
+        content={`${weight} kg`}
       />
       <InfoItem
         subject="포획률"
@@ -81,11 +81,13 @@ export default function InformationDetail({
       <InfoItem subject="성장">
         <InforamtionDetailGrowthRate growthRate={detail.growthRate} />
       </InfoItem>
-      <InfoItem
-        subject="노력치"
-      >
-        <div className="text-slate-600 text-sm sm:text-[15px] font-semibold grid gap-y-1">
-          {effortStats.map((effortStat) => <div key={effortStat}>{effortStat}</div>)}
+      <InfoItem subject="노력치">
+        <div className="grid gap-y-1">
+          {effortStats.map(({ stat, value }) => (
+            <div key={stat}>
+              {`${stat} : ${value}`}
+            </div>
+          ))}
         </div>
       </InfoItem>
     </div>

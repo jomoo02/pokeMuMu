@@ -35,7 +35,7 @@ export default async function Page({
   } = surroundingPoke;
 
   return (
-    <div className="grid gap-y-6 md:gap-y-10">
+    <div className="flex flex-col gap-y-8 md:gap-y-20 font-pretendard text-sm lg:text-[15px] font-medium text-slate-800">
       <PokeNavigation before={before} next={next} />
       <PokeList pokeList={pokeList}>
         <PokeEvolution evolution={pokeEvolution} />

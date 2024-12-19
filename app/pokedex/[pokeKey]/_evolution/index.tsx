@@ -21,13 +21,11 @@ export default function PokeEvolution({
 
   return (
     <div>
-      <Header
-        text="진화"
-      />
-      <div className="border-2 border-slate-500 rounded-lg bg-white">
+      <Header text="진화" />
+      <div className="border-2 border-slate-500 rounded-lg bg-white py-0.5 md:py-2">
         <PokeChain evolution={evolution} />
-        <Area id={id} />
       </div>
+      <Area id={id} />
     </div>
   );
 }

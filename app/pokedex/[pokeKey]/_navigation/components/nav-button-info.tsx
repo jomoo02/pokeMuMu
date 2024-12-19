@@ -16,11 +16,11 @@ export default function NavButtonInfo({
 
   return (
     <div className="flex gap-x-3 items-center">
-      <div className="flex gap-x-1.5 justify-center font-semibold text-slate-800 text-sm lg:text-[15px]">
+      <div className="flex gap-x-1.5 justify-center">
         <span className="text-slate-700">
           {`#${no}`}
         </span>
-        <span className="text-center">
+        <span>
           {name}
         </span>
       </div>

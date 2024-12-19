@@ -33,7 +33,7 @@ export default function ChainPokeDetail({
     if (maxWidth === 8) {
       return 'min-h-40 md:min-h-36';
     }
-    return 'min-h-32 md:min-h-28';
+    return 'min-h-24 md:min-h-28';
   })();
 
   if (detail.length === 0) {
@@ -42,7 +42,7 @@ export default function ChainPokeDetail({
 
   return (
     <div className={`flex flex-col items-center justify-center px-5 sm:px-1.5 lg:px-4 ${width} ${height}`}>
-      <div className="text-xs md:text-sm text-center break-words space-x-1 w-full xl:px-4">
+      <div className="text-xs lg:text-sm text-center break-words space-x-1 w-full xl:px-4">
         {detail.map(({ trigger, condition }, index) => (
           <Fragment key={`${trigger}-${condition.map(({ key, value }) => `${key}-${value}`).join('/')}`}>
             {index > 0 && <div>or</div>}
@@ -51,7 +51,7 @@ export default function ChainPokeDetail({
           </Fragment>
         ))}
       </div>
-      <div className="flex justify-center mt-2.5 md:mt-0.5 ">
+      <div className="flex justify-center mt-2 md:mt-0.5">
         <EvolutionArrowIcon maxWidth={maxWidth} />
       </div>
     </div>

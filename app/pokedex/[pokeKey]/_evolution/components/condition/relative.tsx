@@ -16,7 +16,14 @@ function Nature({
 
     const natureList = natureMap[value];
 
-    return <span className="text-xs">{natureList}</span>;
+    return (
+      <span>
+        성격에 따라
+        (
+        <span className="text-xs">{natureList}</span>
+        )
+      </span>
+    );
   }
 
   return null;

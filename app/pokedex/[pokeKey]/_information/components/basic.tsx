@@ -48,10 +48,10 @@ export default function InformationBasic({
         <div className="grid gap-y-1.5 sm:gap-y-1">
           {localNoList.map(({ pokedex, entryNumber }) => (
             <div key={pokedex} className="flex">
-              <span className="min-w-11 max-w-11 sm:min-w-12 sm:max-w-12 flex items-center text-slate-600 text-sm sm:text-[15px]">
+              <span className="min-w-10 max-w-10 sm:min-w-12 sm:max-w-12 flex items-center">
                 {entryNumber}
               </span>
-              <span className="text-xs sm:text-sm text-slate-500/90 flex items-center">
+              <span className="text-xs lg:text-sm text-slate-500 flex items-center">
                 {`(${pokedex})`}
               </span>
             </div>

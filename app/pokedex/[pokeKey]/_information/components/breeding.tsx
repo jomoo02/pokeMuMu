@@ -25,15 +25,23 @@ function Gender({ genderRate }: { genderRate: number }) {
   } = getGenderInfo(genderRate);
 
   return (
-    <div className="text-slate-600 text-sm sm:text-[15px] font-semibold capitalize">
-      <span className="text-blue-500">
-        {`수컷: ${maleValue}`}
+    <>
+      <span className="text-blue-600">
+        수컷
+      </span>
+      {' : '}
+      <span className="text-blue-600">
+        {maleValue}
       </span>
       {', '}
-      <span className="text-pink-500">
-        {`암컷: ${femaleValue}`}
+      <span className="text-pink-600">
+        암컷
       </span>
-    </div>
+      {' : '}
+      <span className="text-pink-600">
+        {femaleValue}
+      </span>
+    </>
   );
 }
 
@@ -46,16 +54,14 @@ export default function InformationBreeding({
     <div>
       <InfoTitle title="유전 정보" />
       <InfoItem subject="알 그룹">
-        <div>
-          {eggGroups.map((eggGroup, index) => (
-            <Fragment key={eggGroup}>
-              {index > 0 && (
-                <span className="mr-1">,</span>
-              )}
-              <span>{eggGroup}</span>
-            </Fragment>
-          ))}
-        </div>
+        {eggGroups.map((eggGroup, index) => (
+          <Fragment key={eggGroup}>
+            {index > 0 && (
+              <span className="mr-1">,</span>
+            )}
+            <span>{eggGroup}</span>
+          </Fragment>
+        ))}
       </InfoItem>
       <InfoItem subject="성비">
         <Gender genderRate={breeding.genderRate} />

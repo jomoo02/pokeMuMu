@@ -27,7 +27,7 @@ export default function DamageRate({
 
   return (
     <>
-      <div className="flex justify-center items-center md:py-1 md:border-b border-slate-400 text-[13px] md:text-[15px] font-semibold min-w-16">
+      <div className="flex justify-center items-center md:py-1 md:border-b border-slate-400 min-w-16">
         {`x ${damageRate}`}
       </div>
       <div className="flex justify-center md:px-3.5 md:py-3">

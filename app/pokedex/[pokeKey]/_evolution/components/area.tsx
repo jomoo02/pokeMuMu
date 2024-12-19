@@ -1,35 +1,8 @@
 import React from 'react';
 import { getAreaList } from '../lib/area';
-import type { RegionalArea } from '../data/area.type';
-
-interface AreaItemProps {
-  regionalAreaList: RegionalArea[];
-}
 
 interface AreaProps {
   id: number;
-}
-
-function AreaItem({
-  regionalAreaList,
-}: AreaItemProps) {
-  return (
-    <>
-      {regionalAreaList.map(({ region, area }) => (
-        <div
-          key={region}
-          className="grid divide-x grid-cols-5 text-sm  leading-4 font-medium h-10 items-stretch border-b-2 last:border-b-0"
-        >
-          <div className="flex justify-center items-center">
-            {region}
-          </div>
-          <div className="col-span-4 flex items-center px-2">
-            {area}
-          </div>
-        </div>
-      ))}
-    </>
-  );
 }
 
 export default function Area({
@@ -42,17 +15,29 @@ export default function Area({
   }
 
   return (
-    <>
+    <div className="grid lg:grid-cols-2 gap-x-24 xl:gap-x-32 gap-y-6 mt-6">
       {areaList.map(({ regionalAreaList, title, id: areaId }) => (
         <div key={areaId}>
-          <div
-            className="flex justify-center py-0.5 font-semibold items-center text-white text-sm"
-          >
+          <div className="flex py-1.5 font-bold items-center text-base lg:text-lg">
             {title}
           </div>
-          <AreaItem regionalAreaList={regionalAreaList} />
+          <div className="border-2 border-slate-500 rounded-lg grid divide-y divide-slate-400">
+            {regionalAreaList.map(({ region, area }) => (
+              <div
+                key={region}
+                className="grid divide-x divide-slate-400 grid-cols-5 text-sm lg:text-[15px] h-10 items-stretch"
+              >
+                <div className="flex justify-center items-center">
+                  {region}
+                </div>
+                <div className="col-span-4 flex items-center px-2">
+                  {area}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
