@@ -19,7 +19,7 @@ export default function PokeListGroup({
   const checkTargetPoke = (poke: Poke) => poke.order === targetPoke.order;
 
   return (
-    <div className="flex gap-x-2">
+    <div className="flex mx-1 pb-1.5 gap-x-1.5 overflow-x-auto">
       {pokeList.map((poke) => {
         const isTargetPoke = checkTargetPoke(poke);
 
@@ -27,7 +27,7 @@ export default function PokeListGroup({
           return (
             <div
               key={poke.order}
-              className="px-3 py-1 rounded-lg font-semibold text-[15px] bg-slate-700 text-white border-2 border-slate-700"
+              className="px-3 sm:px-3.5 py-1 border-b-2 border-blue-400 text-blue-600 text-nowrap"
             >
               {poke.label}
             </div>
@@ -38,7 +38,7 @@ export default function PokeListGroup({
             key={poke.order}
             type="button"
             onClick={() => handlePokeClick(poke)}
-            className="px-3 py-1 rounded-lg font-semibold text-[15px] bg-white border-2 border-slate-500 hover:bg-[#e2e8f0]"
+            className="px-3 sm:px-3.5 py-1 border-b-2 border-transparent bg-white hover:border-b-2 hover:border-slate-400 text-nowrap"
           >
             {poke.label}
           </button>

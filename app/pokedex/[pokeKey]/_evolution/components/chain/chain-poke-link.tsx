@@ -19,7 +19,7 @@ export default function ChainPokeLink({
   return (
     <Link
       href={`/pokedex/${pokeKey}`}
-      className="text-center min-h-10 max-h-20 flex flex-col underline underline-offset-2 hover:text-blue-400"
+      className="text-center min-h-10 max-h-20 flex flex-col underline underline-offset-2 hover:text-blue-600"
       prefetch
     >
       <span>
