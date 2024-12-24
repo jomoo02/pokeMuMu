@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Ability } from '@/app/models/poke.type';
+import type { Ability } from '@/app/models/pokev4.type';
 import Header from '../components/header';
 import PokeAbility from './components/ability';
 
