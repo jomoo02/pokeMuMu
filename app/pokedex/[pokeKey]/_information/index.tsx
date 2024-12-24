@@ -17,22 +17,23 @@ export default function PokeInformation({
   // const src = '/pokeball.svg';
 
   return (
-    <div className="border-slate-500 border-2 rounded-lg grid xl:grid-cols-3 items-center bg-white">
-      <div>
-        <div className="flex justify-center items-center py-3 sm:py-5 lg:py-6 xl:py-0">
-          <Image
-            src={src}
-            alt={poke.name.ko}
-            width={200}
-            height={200}
-            priority
-          />
-        </div>
+    <div className="border-slate-500 border-2 rounded-lg flex flex-col xl:flex-row bg-white">
+      <div className="flex justify-center items-center py-3 sm:py-5 lg:py-6 xl:py-0 xl:w-1/3">
+        <Image
+          src={src}
+          alt={poke.name.ko}
+          width={200}
+          height={200}
+          priority
+        />
       </div>
-      <div className="xl:col-span-2 xl:py-4">
-        <div className="px-2 2xl:px-10 pb-1 md:pb-4 grid xl:grid-cols-2 xl:gap-x-8 2xl:gap-x-14 gap-y-4 xl:min-h-[500px]">
-          <InformationBasic poke={poke} />
-          <div className="grid gap-y-4 gap-x-6 xl:gap-y-6">
+      <div className="flex flex-col xl:flex-1 xl:py-4 px-2 xl:px-4 2xl:px-10 xl:w-2/3">
+        <div className="pb-1 md:pb-4 flex flex-col xl:flex-row xl:gap-x-8 2xl:gap-x-14 gap-y-4 xl:min-h-[500px]">
+          <InformationBasic
+            poke={poke}
+            className="basis-1/2"
+          />
+          <div className="flex flex-col gap-y-4 xl:gap-y-6 basis-1/2">
             <InformationDetail detail={poke.detail} />
             <InformationBreeding breeding={poke.breeding} />
           </div>

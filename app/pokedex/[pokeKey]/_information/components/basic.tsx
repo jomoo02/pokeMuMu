@@ -7,10 +7,12 @@ import InfoTitle from './info-title';
 
 interface BasicProps {
   poke: Poke;
+  className?: string;
 }
 
 export default function InformationBasic({
   poke,
+  className,
 }: BasicProps) {
   const {
     name,
@@ -25,7 +27,7 @@ export default function InformationBasic({
   } = classifyPokedexNumber(pokedexNumbers);
 
   return (
-    <div>
+    <div className={className}>
       <InfoTitle title="기본 정보" />
       <InfoItem
         subject="전국도감"
@@ -45,19 +47,23 @@ export default function InformationBasic({
         </div>
       </InfoItem>
       <InfoItem subject="지역도감">
-        <div className="grid gap-y-1.5 sm:gap-y-1">
+        <div className="flex flex-col gap-y-1.5 sm:gap-y-1 ">
           {localNoList.map(({ pokedex, entryNumber }) => (
-            <div key={pokedex} className="flex">
-              <span className="min-w-10 max-w-10 sm:min-w-12 sm:max-w-12 flex items-center">
+            <div
+              key={pokedex}
+              className="flex items-center overflow-hidden"
+            >
+              <span className="truncate min-w-10 sm:min-w-12 max-w-10 sm:max-w-12">
                 {entryNumber}
               </span>
-              <span className="text-xs lg:text-sm text-slate-500 flex items-center">
+              <span className="truncate text-xs lg:text-sm text-slate-500 flex-1">
                 {`(${pokedex})`}
               </span>
             </div>
           ))}
         </div>
       </InfoItem>
+
     </div>
   );
 }

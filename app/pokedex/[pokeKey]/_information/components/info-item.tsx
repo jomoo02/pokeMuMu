@@ -13,10 +13,10 @@ export default function InfoItem({
 }: InfoItemProps) {
   return (
     <div className="flex gap-x-3.5 xs:gap-x-5 md:gap-x-7 py-1 items-center min-h-[35px] border-b border-slate-400">
-      <div className="w-[4.7rem] sm:w-[5.25rem] flex items-center justify-end text-slate-500">
+      <div className="min-w-[4.7rem] sm:min-w-[5.25rem] flex items-center justify-end text-slate-500">
         {subject}
       </div>
-      <div>
+      <div className="flex-1 overflow-hidden">
         {content}
         {children}
       </div>

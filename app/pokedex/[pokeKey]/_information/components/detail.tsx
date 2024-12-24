@@ -31,16 +31,16 @@ function InforamtionDetailGrowthRate({
   const atLevel100Text = 'Lv.1 -> Lv.100';
 
   return (
-    <div className="grid gap-y-1">
-      <div>{growthRateText}</div>
-      <div>
+    <div className="flex flex-col gap-y-1">
+      <div className="truncate">{growthRateText}</div>
+      <div className="truncate">
         <span className="text-slate-500 text-xs lg:text-sm">
           {atLevel50Text}
         </span>
         {' : '}
         {expPointAt50}
       </div>
-      <div>
+      <div className="truncate">
         <span className="text-slate-500 text-xs lg:text-sm">
           {atLevel100Text}
         </span>

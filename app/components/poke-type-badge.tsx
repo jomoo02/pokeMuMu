@@ -19,7 +19,7 @@ export default function PokeTypeBadge({
   return (
     <div
       className={
-        `${width} leading-[22px] xs:leading-[23px] px-px font-medium text-sm text-center rounded-[5px] border border-zinc-700/80 text-white ${type} type-text capitalize`
+        `${width} leading-[22px] xs:leading-[23px] h-[25px] px-px font-medium text-sm text-center rounded-[5px] border border-zinc-700/80 text-white ${type} type-text shrink-0`
       }
     >
       {typeText}

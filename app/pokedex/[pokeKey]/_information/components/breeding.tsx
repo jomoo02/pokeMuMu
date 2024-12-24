@@ -16,7 +16,7 @@ function Gender({ genderRate }: { genderRate: number }) {
   const isGenderless = checkGenderless(genderRate);
 
   if (isGenderless) {
-    return <div>무성</div>;
+    return <div className="text-nowrap">무성</div>;
   }
 
   const {
@@ -26,7 +26,7 @@ function Gender({ genderRate }: { genderRate: number }) {
 
   return (
     <>
-      <span className="text-blue-600">
+      <span className="text-blue-600 text-nowrap">
         수컷
       </span>
       {' : '}
@@ -34,7 +34,7 @@ function Gender({ genderRate }: { genderRate: number }) {
         {maleValue}
       </span>
       {', '}
-      <span className="text-pink-600">
+      <span className="text-pink-600 text-nowrap">
         암컷
       </span>
       {' : '}
@@ -59,7 +59,7 @@ export default function InformationBreeding({
             {index > 0 && (
               <span className="mr-1">,</span>
             )}
-            <span>{eggGroup}</span>
+            <span className="text-nowrap">{eggGroup}</span>
           </Fragment>
         ))}
       </InfoItem>

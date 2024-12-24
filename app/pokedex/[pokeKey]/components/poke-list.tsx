@@ -31,7 +31,7 @@ export default function PokeList({
         name={pokeList[0].name}
         no={pokeList[0].no}
       />
-      <div className="grid gap-y-3">
+      <div className="flex flex-col gap-y-3">
         <PokeListGroup
           pokeList={pokeList}
           targetPoke={targetPoke}
