@@ -1,4 +1,4 @@
-import type { MachineType } from '@/app/models/detail.type';
+import type { MachineType } from '@/app/models/pokev4.type';
 import type { CellKey } from './cell-key';
 
 export type TableHeadItem = {

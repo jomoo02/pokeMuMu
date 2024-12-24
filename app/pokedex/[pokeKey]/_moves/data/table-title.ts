@@ -1,4 +1,4 @@
-import type { MoveMethod } from '@/app/models/detail.type';
+import type { MoveMethod } from '@/app/models/pokev4.type';
 
 const TABLE_TITLE_LIST: Record<MoveMethod, string> = {
   'level-up': '레벌 업으로 익히는 기술',

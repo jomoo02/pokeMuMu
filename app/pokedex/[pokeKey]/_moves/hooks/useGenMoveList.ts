@@ -3,7 +3,7 @@ import {
   VERSION_LIST,
   type Version,
 } from '@/app/data/version';
-import type { GenMoves } from '@/app/models/detail.type';
+import type { GenMoves } from '@/app/models/pokev4.type';
 
 export default function useGenMoveList(genMoveList: GenMoves) {
   const filterdGenMoveList = genMoveList.filter(({ versionMoves }) => (

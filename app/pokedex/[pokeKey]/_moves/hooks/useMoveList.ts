@@ -1,7 +1,7 @@
 import {
   useState,
 } from 'react';
-import type { Moves } from '@/app/models/detail.type';
+import type { Moves } from '@/app/models/pokev4.type';
 
 export default function useMoveList(moves: Moves) {
   const genList = moves.map(({ gen }) => gen);

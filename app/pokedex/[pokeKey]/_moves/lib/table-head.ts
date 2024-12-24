@@ -1,7 +1,7 @@
 import type {
   MachineType,
   MoveMethod,
-} from '@/app/models/detail.type';
+} from '@/app/models/pokev4.type';
 import {
   defaultHeadItemList,
   levelHeadItem,

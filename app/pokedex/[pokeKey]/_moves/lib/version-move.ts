@@ -2,7 +2,7 @@ import type {
   VersionMove,
   MoveMethod,
   Move,
-} from '@/app/models/detail.type';
+} from '@/app/models/pokev4.type';
 
 function checkEmptyVersionMove(versionMove: VersionMove) {
   const filterdVersionMove = Object.values(versionMove).filter((moveList) => moveList.length > 0);

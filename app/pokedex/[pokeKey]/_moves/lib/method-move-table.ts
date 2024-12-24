@@ -1,4 +1,4 @@
-import type { Move } from '@/app/models/detail.type';
+import type { Move } from '@/app/models/pokev4.type';
 import type { CellKey } from '../data/cell-key';
 
 const compareFunctionList: Record<CellKey, (a: Move, b: Move) => number> = {
