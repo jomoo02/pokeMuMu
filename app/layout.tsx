@@ -3,6 +3,7 @@ import React from 'react';
 import './styles/globals.css';
 import './styles/type.css';
 import localFont from 'next/font/local';
+import MainHeader from './components/main-header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${inter.className} ${pretendard.variable} antialiased`}>
+        <MainHeader />
         <main className="py-6 min-h-svh px-4 xl:max-w-screen-xl mx-auto">
           {children}
         </main>
