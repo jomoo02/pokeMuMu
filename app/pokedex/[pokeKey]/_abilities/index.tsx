@@ -17,7 +17,7 @@ export default function PokeAbilities({
   return (
     <div>
       <Header text="특성" />
-      <div className="grid divide-y border-2 border-slate-500 rounded-lg divide-slate-400">
+      <div className="grid divide-y border-2 border-slate-500 rounded-lg divide-slate-300">
         {abilities.map(({ name, isHidden, flavorText }) => (
           <PokeAbility
             key={name}

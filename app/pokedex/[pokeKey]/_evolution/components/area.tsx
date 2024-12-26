@@ -21,11 +21,11 @@ export default function Area({
           <div className="flex py-1.5 font-bold items-center text-base lg:text-lg">
             {title}
           </div>
-          <div className="border-2 border-slate-500 rounded-lg grid divide-y divide-slate-400">
+          <div className="border-2 border-slate-500 rounded-lg grid divide-y divide-slate-300">
             {regionalAreaList.map(({ region, area }) => (
               <div
                 key={region}
-                className="grid divide-x divide-slate-400 grid-cols-5 text-sm lg:text-[15px] h-10 items-stretch"
+                className="grid divide-x divide-slate-300 grid-cols-5 text-sm lg:text-[15px] h-10 items-stretch"
               >
                 <div className="flex justify-center items-center">
                   {region}

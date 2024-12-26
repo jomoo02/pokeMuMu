@@ -30,7 +30,7 @@ export default function TableHead({
         }) => (
           <th
             key={id}
-            className={`${className} font-bold h-[2.4rem] border p-0 border-slate-400`}
+            className={`${className} font-bold h-[2.4rem] border p-0 border-slate-300`}
           >
             <button
               type="button"

@@ -12,8 +12,8 @@ export default function DamageRate({
   types,
 }: DamageRateProps) {
   return (
-    <div className="flex divide-x divide-slate-400">
-      <div className="flex justify-center items-center border-slate-400 min-w-16 md:min-w-20">
+    <div className="flex divide-x divide-slate-300">
+      <div className="flex justify-center items-center border-slate-300 min-w-16 md:min-w-20">
         {`x ${damageRate}`}
       </div>
       <div
