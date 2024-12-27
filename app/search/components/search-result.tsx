@@ -13,7 +13,7 @@ export default function SearchResult({
 }: SearchResultProps) {
   if (!noSpaceInputText) {
     return (
-      <>
+      <div>
         {searchResult.length === 0 ? (
           <div className="px-1 lg:px-2 w-full relative top-36 text-center text-base text-slate-600">
             최근 검색한 포켓몬이 없습니다
@@ -27,12 +27,12 @@ export default function SearchResult({
             ))}
           </div>
         )}
-      </>
+      </div>
     );
   }
 
   return (
-    <>
+    <div>
       {searchResult.length === 0 ? (
         <div className="px-1 lg:px-2 w-full relative top-36 text-center text-base text-slate-600">
           일치하는 포켓몬이 없습니다
@@ -46,6 +46,6 @@ export default function SearchResult({
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }
