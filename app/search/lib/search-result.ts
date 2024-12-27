@@ -15,5 +15,9 @@ export function isIntegerInputText(input: string) {
 }
 
 export function getPokeNameDirectionParticle(inputText: string) {
+  if (!inputText) {
+    return '';
+  }
+
   return getDirectionalParticle(inputText) || '(으)로';
 }

@@ -16,7 +16,7 @@ export default function SearchInput({
   const handleCloseOnClick = () => closeSearch();
 
   return (
-    <div className="min-h-9 max-h-9 flex justify-center border-b border-slate-300 px-2 gap-x-0.5 items-center">
+    <div className="min-h-9 max-h-9 flex justify-center border-b border-slate-300 px-2 gap-x-0.5 items-center text-base">
       <SearchIcon size="1.45rem" />
       <input
         type="text"
