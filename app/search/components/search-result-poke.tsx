@@ -55,22 +55,18 @@ export default function SearchResultPoke({
             priority
           />
         </div>
-        <div
-          className="overflow-hidden flex flex-1 flex-col justify-center"
-        >
+        <div className="overflow-hidden flex flex-1 flex-col justify-center">
           <div className="truncate leading-[18px]">
             {nameKo}
           </div>
           <div className="truncate text-[13px] lg:text-[14px] leading-[18px]">
             {nameEn}
           </div>
-          <div className="text-[11.5px] lg:text-xs lg:leading-5 text-slate-500 truncate">
+          <div className="text-xs lg:text-[12.5px] lg:leading-5 text-slate-500 truncate">
             {form}
           </div>
         </div>
-        <div
-          className="flex flex-col gap-y-1 items-center lg:gap-y-1.5"
-        >
+        <div className="flex flex-col gap-y-1 items-center lg:gap-y-1.5">
           {types.map((type) => (
             <PokeTypeBadge type={type} key={type} />
           ))}

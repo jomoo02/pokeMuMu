@@ -24,7 +24,7 @@ export default function useSearch() {
   const {
     searchPokeList,
     status: searchStatus,
-  } = useSearchPoke(inputText, 500);
+  } = useSearchPoke(inputText, 300);
 
   const {
     localPokeList,
@@ -40,11 +40,11 @@ export default function useSearch() {
   return {
     loading,
     inputText,
-    closeSearch,
     handleInputTextChange,
     searchResult,
     localStatus,
     isEmptyInputText,
     status,
+    closeSearch,
   };
 }

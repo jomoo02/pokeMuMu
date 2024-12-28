@@ -3,6 +3,10 @@ import { getHomePokeSpriteSrc } from '@/app/utils/sprite';
 import type { PokedexPoke } from '@/app/models/pokev4.type';
 
 function getPokeInfo(poke: PokedexPoke) {
+  const noFormTextCase = '기본 모습';
+  const defaultName = '포켓몬';
+  const defaultNameEn = 'name';
+
   const {
     name,
     no,
@@ -13,7 +17,7 @@ function getPokeInfo(poke: PokedexPoke) {
   } = poke;
 
   const { ko, en } = name;
-  const formText = form === '기본 모습' ? '' : form;
+  const formText = form === noFormTextCase ? '' : form;
   const formattedNo = formatPokedexNumber(no);
   const src = getHomePokeSpriteSrc(sprite);
 
@@ -21,8 +25,8 @@ function getPokeInfo(poke: PokedexPoke) {
     pokeKey,
     types,
     src,
-    nameKo: ko || '포켓몬',
-    nameEn: en || 'name',
+    nameKo: ko || defaultName,
+    nameEn: en || defaultNameEn,
     form: formText,
     no: formattedNo,
   };

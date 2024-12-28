@@ -18,8 +18,6 @@ export default function Search() {
     closeSearch,
   } = useSearch();
 
-  // console.log(loading, searchResult, inputText, status, localStatus);
-
   return (
     <div className="flex flex-col bg-white h-full lg:border lg:border-zinc-400/80 lg:rounded-xl py-0.5 lg:shadow-lg">
       <SearchInput
@@ -34,7 +32,7 @@ export default function Search() {
           />
         </div>
         {loading ? (
-          <div className="relative top-48 w-full flex items-center justify-center">
+          <div className="relative top-52 lg:top-36 w-full flex items-center justify-center">
             <div className="animate-spin">
               <LoadingIcon />
             </div>

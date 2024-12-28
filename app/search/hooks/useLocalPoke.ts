@@ -1,18 +1,26 @@
 import { useState, useEffect } from 'react';
 import useLocalStorage from '@/app/hooks/useLocalStorage';
 
+const localStatus = {
+  Init: 'init',
+  Loaded: 'loaded',
+  Empty: 'empty',
+} as const;
+
+type LocalStatus = typeof localStatus[keyof typeof localStatus];
+
 export default function useLocalPoke() {
   const { loading, localPokeList } = useLocalStorage();
-  const [status, setStatus] = useState<'init' | 'loaded' | 'empty'>('init');
+  const [status, setStatus] = useState<LocalStatus>(localStatus.Init);
 
   useEffect(() => {
     if (loading) {
-      setStatus('init');
+      setStatus(localStatus.Init);
     }
     if (localPokeList?.length === 0) {
-      setStatus('empty');
+      setStatus(localStatus.Empty);
     } else {
-      setStatus('loaded');
+      setStatus(localStatus.Loaded);
     }
   }, [localPokeList, loading]);
 

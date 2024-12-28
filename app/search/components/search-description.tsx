@@ -2,7 +2,7 @@ import React from 'react';
 import {
   isIntegerInputText,
   getPokeNameDirectionParticle,
-} from '../lib/search-result';
+} from '../lib/search-description';
 
 interface SearchDescriptionProps {
   inputText: string;

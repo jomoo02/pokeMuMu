@@ -18,12 +18,14 @@ export default function PokeInformation({
 
   return (
     <div className="border-slate-500 border-2 rounded-lg flex flex-col xl:flex-row bg-white">
-      <div className="flex justify-center items-center py-3 sm:py-5 lg:py-6 xl:py-0 xl:w-1/3">
+      <div className="flex justify-center items-center py-3 sm:py-5 lg:py-6 xl:py-0 xl:w-1/3" key={poke.id}>
         <Image
           src={src}
           alt={poke.name.ko}
           width={200}
           height={200}
+          placeholder="blur"
+          blurDataURL="/pokeball.svg"
           priority
         />
       </div>
