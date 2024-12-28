@@ -6,14 +6,14 @@ import {
 
 interface SearchDescriptionProps {
   inputText: string;
-  noSpaceInputText: string;
+  isEmptyInputText: boolean;
 }
 
 export default function SearchDescription({
   inputText,
-  noSpaceInputText,
+  isEmptyInputText,
 }: SearchDescriptionProps) {
-  if (!noSpaceInputText) {
+  if (isEmptyInputText) {
     return <span className="text-slate-600">최근 검색한 포켓몬</span>;
   }
 

@@ -4,11 +4,11 @@ import type { PokedexPoke } from '@/app/models/pokev4.type';
 const KEY = 'local-poke';
 
 export default function useLocalStorage() {
-  const [loading, setLoading] = useState<boolean>(false);
-  const [localPokeList, setLocalPokeList] = useState<PokedexPoke[] | []>([]);
+  // const [loading, setLoading] = useState<boolean>(false);
+  const [localPokeList, setLocalPokeList] = useState<PokedexPoke[] | null>(null);
 
   const excludePokeByOrder = (order: number) => (
-    localPokeList.filter((poke: PokedexPoke) => poke.order !== order)
+    localPokeList?.filter((poke: PokedexPoke) => poke.order !== order) ?? []
   );
 
   const saveLocalPoke = (poke: PokedexPoke) => {
@@ -34,11 +34,11 @@ export default function useLocalStorage() {
   };
 
   useEffect(() => {
-    setLoading(true);
     const localPoke = getLocalPokes();
     setLocalPokeList(localPoke);
-    setLoading(false);
   }, []);
+
+  const loading = localPokeList === null;
 
   return {
     loading,

@@ -4,7 +4,7 @@ import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import useEscKeyListener from '@/app/hooks/useEscKeyListener';
 import useLocalPoke from './useLocalPoke';
 import useSearchPoke from './useSearchPoke';
-import { containsKorean } from '../utils/input-type';
+import { checkEmptyText } from '../utils/input-type';
 
 export default function useSearch() {
   useLockBodyScroll();
@@ -19,26 +19,32 @@ export default function useSearch() {
 
   useEscKeyListener(closeSearch);
 
-  const noSpaceInputText = containsKorean(inputText) ? inputText.replace(/\s/g, '') : inputText.trim();
+  const isEmptyInputText = checkEmptyText(inputText);
 
   const {
-    result: localPokeList,
-    loading: localLoading,
+    searchPokeList,
+    status: searchStatus,
+  } = useSearchPoke(inputText, 500);
+
+  const {
+    localPokeList,
+    status: localStatus,
   } = useLocalPoke();
-  const {
-    result: searchResult,
-    loading: searchLoading,
-  } = useSearchPoke(noSpaceInputText, 500);
 
-  const loading = localLoading || searchLoading;
-  const result = noSpaceInputText ? searchResult : localPokeList;
+  const loading = searchStatus === 'fetching' || localStatus === 'init';
+
+  const searchResult = isEmptyInputText && localStatus !== 'init' ? localPokeList : searchPokeList;
+
+  const status = isEmptyInputText ? localStatus : searchStatus;
 
   return {
     loading,
     inputText,
-    noSpaceInputText,
     closeSearch,
     handleInputTextChange,
-    searchResult: result,
+    searchResult,
+    localStatus,
+    isEmptyInputText,
+    status,
   };
 }

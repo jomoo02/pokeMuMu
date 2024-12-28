@@ -9,13 +9,16 @@ import SearchDescription from './search-description';
 
 export default function Search() {
   const {
-    loading,
     inputText,
-    noSpaceInputText,
-    closeSearch,
     handleInputTextChange,
     searchResult,
+    status,
+    loading,
+    isEmptyInputText,
+    closeSearch,
   } = useSearch();
+
+  // console.log(loading, searchResult, inputText, status, localStatus);
 
   return (
     <div className="flex flex-col bg-white h-full lg:border lg:border-zinc-400/80 lg:rounded-xl py-0.5 lg:shadow-lg">
@@ -24,10 +27,10 @@ export default function Search() {
         closeSearch={closeSearch}
       />
       <div className="h-[calc(100dvh-2.3rem)] flex-1 overflow-y-auto">
-        <div className="px-1.5 lg:px-2 py-1 border-b border-slate-300 bg-slate-50">
+        <div className="px-1.5 lg:px-2 py-1 border-b border-slate-300">
           <SearchDescription
             inputText={inputText}
-            noSpaceInputText={noSpaceInputText}
+            isEmptyInputText={isEmptyInputText}
           />
         </div>
         {loading ? (
@@ -38,8 +41,9 @@ export default function Search() {
           </div>
         ) : (
           <SearchResult
-            noSpaceInputText={noSpaceInputText}
+            isEmptyInputText={isEmptyInputText}
             searchResult={searchResult}
+            status={status}
           />
         )}
       </div>

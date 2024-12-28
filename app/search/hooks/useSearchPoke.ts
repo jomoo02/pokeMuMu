@@ -1,37 +1,52 @@
 import { useState, useEffect } from 'react';
 import type { PokedexPoke } from '@/app/models/pokev4.type';
 import { getSearchPoke } from '../lib/get-search';
+import { formatNoSpaceInputText } from '../utils/input-type';
 
 export default function useSearchPoke(inputText: string, delay: number = 300) {
   const [result, setResult] = useState<PokedexPoke[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'fetching' | 'success' | 'empty' | 'error'>('idle');
+
+  const noSpaceInputText = formatNoSpaceInputText(inputText);
 
   useEffect(() => {
-    const search = async () => {
+    let timeoutId: NodeJS.Timeout | null = null;
+
+    const fetchPoke = async () => {
       try {
-        setLoading(true);
-        const pokeList = await getSearchPoke(inputText);
-        setResult(pokeList);
+        setStatus('fetching');
+        const pokeList = await getSearchPoke(noSpaceInputText);
+
+        timeoutId = setTimeout(() => {
+          setResult(pokeList);
+          setStatus(pokeList.length > 0 ? 'success' : 'empty');
+        }, delay);
       } catch (error) {
         console.error('Error fetching search results:', error);
-        setResult([]);
-      } finally {
-        setTimeout(() => {
-          setLoading(false);
+
+        timeoutId = setTimeout(() => {
+          setResult([]);
+          setStatus('error');
         }, delay);
       }
     };
 
-    if (inputText) {
-      search();
+    if (noSpaceInputText) {
+      fetchPoke();
     } else {
       setResult([]);
-      setLoading(false);
+      setStatus('idle');
     }
-  }, [inputText, delay]);
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [noSpaceInputText, delay]);
 
   return {
-    loading,
-    result,
+    searchPokeList: result,
+    status,
   };
 }

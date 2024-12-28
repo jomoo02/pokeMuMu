@@ -1,19 +1,24 @@
 import { useState, useEffect } from 'react';
 import useLocalStorage from '@/app/hooks/useLocalStorage';
-import type { PokedexPoke } from '@/app/models/pokev4.type';
 
 export default function useLocalPoke() {
   const { loading, localPokeList } = useLocalStorage();
-  const [result, setResult] = useState<PokedexPoke[]>([]);
+  const [status, setStatus] = useState<'init' | 'loaded' | 'empty'>('init');
 
   useEffect(() => {
-    if (!loading) {
-      setResult(localPokeList);
+    if (loading) {
+      setStatus('init');
     }
-  }, [loading, localPokeList]);
+    if (localPokeList?.length === 0) {
+      setStatus('empty');
+    } else {
+      setStatus('loaded');
+    }
+  }, [localPokeList, loading]);
 
   return {
     loading,
-    result,
+    localPokeList: localPokeList || [],
+    status,
   };
 }

@@ -17,8 +17,24 @@ function checkTextNumberType(text: string) {
   return !Number.isNaN(num);
 }
 
+function formatNoSpaceInputText(text: string = '') {
+  return containsKorean(text) ? text.replace(/\s/g, '') : text.trim();
+}
+
+function checkEmptyText(text: string) {
+  if (!text) {
+    return true;
+  }
+
+  const noSpaceInputText = formatNoSpaceInputText(text);
+
+  return noSpaceInputText === '';
+}
+
 export {
   checkTextLanguageKo,
   checkTextNumberType,
   containsKorean,
+  formatNoSpaceInputText,
+  checkEmptyText,
 };
