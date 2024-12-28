@@ -19,21 +19,23 @@ export default function useSearch() {
 
   useEscKeyListener(closeSearch);
 
-  const isEmptyInputText = checkEmptyText(inputText);
+  const {
+    localPokeList,
+    status: localStatus,
+  } = useLocalPoke();
 
   const {
     searchPokeList,
     status: searchStatus,
   } = useSearchPoke(inputText, 300);
 
-  const {
-    localPokeList,
-    status: localStatus,
-  } = useLocalPoke();
-
   const loading = searchStatus === 'fetching' || localStatus === 'init';
 
-  const searchResult = isEmptyInputText && localStatus !== 'init' ? localPokeList : searchPokeList;
+  const isEmptyInputText = checkEmptyText(inputText);
+
+  const searchResult = (isEmptyInputText && localStatus !== 'init')
+    ? localPokeList
+    : searchPokeList;
 
   const status = isEmptyInputText ? localStatus : searchStatus;
 

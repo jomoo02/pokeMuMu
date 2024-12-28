@@ -15,7 +15,6 @@ export default function SearchResult({
 }: SearchResultProps) {
   const noRecentSearchText = '최근 검색한 포켓몬이 없습니다';
   const noSearchResultText = '일치하는 포켓몬이 없습니다';
-
   const noPokeText = isEmptyInputText ? noRecentSearchText : noSearchResultText;
 
   return (

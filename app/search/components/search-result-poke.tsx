@@ -39,7 +39,7 @@ export default function SearchResultPoke({
       onKeyDown={handleOnEnter}
       prefetch
     >
-      <div className="flex w-full h-full items-center overflow-hidden gap-x-3 px-1.5 xs:px-2.5 lg:px-3">
+      <div className="flex w-full h-full items-center overflow-hidden gap-x-3 px-1.5 xs:px-2.5 lg:px-3 active:bg-blue-50 hover:bg-blue-50">
         <div className="text-slate-700">
           {no}
         </div>
