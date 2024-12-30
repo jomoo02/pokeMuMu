@@ -14,7 +14,7 @@ export default function PokeAbility({
   return (
     <div className={`first:rounded-t-xl last:rounded-b-lg grid grid-cols-10 min-h-12 ${isHidden ? 'bg-blue-50' : 'bg-white'}`}>
       <div
-        className="col-span-3 xl:col-span-2 border-r border-slate-400 py-0.5 px-1 flex flex-col items-center justify-center"
+        className="col-span-3 xl:col-span-2 border-r border-slate-300 py-0.5 px-1 flex flex-col items-center justify-center"
       >
         {name}
         {isHidden && (

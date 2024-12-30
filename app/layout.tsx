@@ -21,17 +21,20 @@ export const metadata = {
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  // modal: React.ReactNode;
+  modal: React.ReactNode;
 }
 
 export default function RootLayout({
   children,
-  // modal,
+  modal,
 }: RootLayoutProps) {
   return (
     <html lang="ko">
       <body className={`${inter.className} ${pretendard.variable} antialiased`}>
         <MainHeader />
+        <div>
+          {modal}
+        </div>
         <main className="py-6 min-h-svh px-4 xl:max-w-screen-xl mx-auto">
           {children}
         </main>
