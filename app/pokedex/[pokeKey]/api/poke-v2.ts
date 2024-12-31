@@ -6,7 +6,7 @@ import type { Evolution } from '@/app/models/evolution.type';
 
 export async function fetchPokeEvolution(pokeKey: string) {
   try {
-    // await dbConnect();
+    await dbConnect();
 
     const query = { pokeKeyList: pokeKey };
     const projection = { _id: 0 };
@@ -43,7 +43,7 @@ export async function fetchPokeWithPokeKey(pokeKey: string) {
 
 export async function fetchSurroundingPoke(pokeKey: string) {
   try {
-    // await dbConnect();
+    await dbConnect();
     const query = { pokeKey };
     const projection = { no: 1 };
 
@@ -88,33 +88,33 @@ export async function fetchSurroundingPoke(pokeKey: string) {
   }
 }
 
-export async function fetchPokeV2(pokeKey: string) {
-  try {
-    await dbConnect();
-    const [
-      evolution,
-      pokeList,
-      surroundingPoke,
-    ] = await Promise.all([
-      fetchPokeEvolution(pokeKey),
-      fetchPokeWithPokeKey(pokeKey),
-      fetchSurroundingPoke(pokeKey),
-    ]);
+// export async function fetchPokeV2(pokeKey: string) {
+//   try {
+//     await dbConnect();
+//     const [
+//       evolution,
+//       pokeList,
+//       surroundingPoke,
+//     ] = await Promise.all([
+//       fetchPokeEvolution(pokeKey),
+//       fetchPokeWithPokeKey(pokeKey),
+//       fetchSurroundingPoke(pokeKey),
+//     ]);
 
-    return {
-      evolution,
-      pokeList,
-      surroundingPoke,
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      evolution: null,
-      pokeList: [],
-      surroundingPoke: {
-        before: null,
-        next: null,
-      },
-    };
-  }
-}
+//     return {
+//       evolution,
+//       pokeList,
+//       surroundingPoke,
+//     };
+//   } catch (error) {
+//     console.error(error);
+//     return {
+//       evolution: null,
+//       pokeList: [],
+//       surroundingPoke: {
+//         before: null,
+//         next: null,
+//       },
+//     };
+//   }
+// }
