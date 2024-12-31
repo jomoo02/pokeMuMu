@@ -1,8 +1,9 @@
 import React from 'react';
 import {
-  getPokeList,
-  getSurroundingPoke,
-  getEvolution,
+  // getPokeList,
+  // getSurroundingPoke,
+  // getEvolution,
+  getPokeV2,
 } from './lib/get-poke';
 import PokeList from './components/poke-list';
 import PokeNavigation from './_navigation';
@@ -19,15 +20,11 @@ export default async function Page({
 }: PageProps) {
   const { pokeKey } = params;
 
-  const [
+  const {
     pokeList,
     surroundingPoke,
-    pokeEvolution,
-  ] = await Promise.all([
-    getPokeList(pokeKey),
-    getSurroundingPoke(pokeKey),
-    getEvolution(pokeKey),
-  ]);
+    evolution: pokeEvolution,
+  } = await getPokeV2(pokeKey);
 
   const {
     before,

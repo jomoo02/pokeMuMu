@@ -1,26 +1,35 @@
 import { cache } from 'react';
+// import {
+//   fetchPokeWithPokeKey,
+//   fetchSurroundingPoke,
+// } from '../api/poke';
+// import {
+//   fetchPokeEvolution,
+// } from '../api/evolution';
 import {
-  fetchPokeWithPokeKey,
-  fetchSurroundingPoke,
-} from '../api/poke';
-import {
-  fetchPokeEvolution,
-} from '../api/evolution';
+  fetchPokeV2,
+} from '../api/poke-v2';
 
-export const getPokeList = cache(async (pokeKey: string) => {
-  const pokeList = await fetchPokeWithPokeKey(pokeKey);
+// export const getPokeList = cache(async (pokeKey: string) => {
+//   const pokeList = await fetchPokeWithPokeKey(pokeKey);
 
-  return pokeList;
-});
+//   return pokeList;
+// });
 
-export const getSurroundingPoke = cache(async (pokeKey: string) => {
-  const pokeSurrounding = await fetchSurroundingPoke(pokeKey);
+// export const getSurroundingPoke = cache(async (pokeKey: string) => {
+//   const pokeSurrounding = await fetchSurroundingPoke(pokeKey);
 
-  return pokeSurrounding;
-});
+//   return pokeSurrounding;
+// });
 
-export const getEvolution = cache(async (pokeKey: string) => {
-  const pokeEvolution = await fetchPokeEvolution(pokeKey);
+// export const getEvolution = cache(async (pokeKey: string) => {
+//   const pokeEvolution = await fetchPokeEvolution(pokeKey);
 
-  return pokeEvolution;
+//   return pokeEvolution;
+// });
+
+export const getPokeV2 = cache(async (pokeKey: string) => {
+  const pokeV2 = await fetchPokeV2(pokeKey);
+
+  return pokeV2;
 });
